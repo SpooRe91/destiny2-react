@@ -1,8 +1,11 @@
+import '../src/css/styles.css';
+import { HomePage } from './Components/HomePage';
 
 function App() {
+
   return (
     <div className="App">
-      <p>Welcome to the BGs clan Destiny 2 app! Created by SpooRe</p>
+      <HomePage />
     </div>
   );
 }
