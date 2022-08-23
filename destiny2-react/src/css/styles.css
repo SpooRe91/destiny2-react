@@ -25,21 +25,33 @@ article {
     word-break: break-word;
     white-space: pre-wrap;
     width: 500px;
-    background-color: #0000006b;
-    color: white;
+    font-size: 18px;
 }
 
-.newsButton{
+
+a {
+    color: antiquewhite;
+}
+
+
+img {
+    max-width: 500px;
+    margin: 5px auto;
+}
+
+.newsButton {
     font-size: 25px;
-    background: #000000db;
-    color: white;
+    background: #545454e0;
+    border: solid #7a7a5f;
+    padding: 5px;
+    border-radius: 10px;
 }
 
+.newsButton:hover {
+    cursor: pointer;
+}
 
 .newsContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -48,6 +60,11 @@ article {
 }
 
 .homeContainer {
+    word-break: break-word;
+    white-space: pre-wrap;
+    width: 50%;
+    background-color: #000000ce;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

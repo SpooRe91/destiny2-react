@@ -53,7 +53,6 @@ export const HomePage = () => {
 
     return (
         <div className="homeContainer">
-
             <>
                 <h1>Welcome to the BGs clan Destiny 2 app! <p style={{ 'fontSize': '14px' }}>Created by: SpooRe</p></h1>
                 {
@@ -86,15 +85,15 @@ export const HomePage = () => {
                         {
                             toShowNews
                             &&
-                            <>
+                            <div className="newsContainer">
                                 <h1>NEWS</h1>
                                 {news.map(el =>
-                                    <article key={el.identifier} className="newsContainer">
+                                    <article key={el.identifier}>
                                         <a href={`https://www.bungie.net/${el.link}`} target="_blank" rel="noreferrer"><h3>{el.displayName}</h3>
                                             <img src={`https://www.bungie.net/${el.image}`} alt="#" />
                                         </a>
                                     </article>)}
-                            </>
+                            </div>
                         }
                     </>
                 }
