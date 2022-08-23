@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public/images/destiny-2-exclusive-fashion-emblem-in-shadowkeep.avif");
+  background-repeat: repeat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    /* overflow-x: hidden;
+      overflow-y: scroll; */
+    overflow-y: overlay;
+    overflow-x: overlay;
+    font-family: 'Open Sans', sans-serif;
+  }
 }
