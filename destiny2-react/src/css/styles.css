@@ -24,12 +24,35 @@ p,
 article {
     word-break: break-word;
     white-space: pre-wrap;
-    width: 50%;
+    width: 500px;
     background-color: #0000006b;
     color: white;
-    margin: 5px;
 }
 
-article {
-    width: 500px;
+.newsButton{
+    font-size: 25px;
+    background: #000000db;
+    color: white;
+}
+
+
+.newsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 50%;
+}
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
+import { ClockLoader } from "react-spinners";
 
 export const HomePage = () => {
 
@@ -47,7 +47,7 @@ export const HomePage = () => {
             .catch(error => {
                 alert(error);
             })
-    }, []);
+    }, [API_KEY]);
 
     const creation = new Date(clanData?.creationDate);
 
@@ -58,14 +58,14 @@ export const HomePage = () => {
                 <h1>Welcome to the BGs clan Destiny 2 app! <p style={{ 'fontSize': '14px' }}>Created by: SpooRe</p></h1>
                 {
                     isLoading
-                        ? <BeatLoader color="lightblue" size="30px" />
+                        ? <ClockLoader color="lightblue" size="50px" />
                         :
                         clanData
                         &&
                         <div>
                             <div>
                                 <h3>{clanData?.name}</h3>
-                                <p>Since: {`${creation?.getDate()}/${creation?.getMonth()}/${creation?.getFullYear()}`}</p>
+                                <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>
                                 <p>Our moto: </p>
                                 <h4>{clanData?.motto}</h4>
                                 <h4>Callsign: {clanData?.clanInfo.clanCallsign}</h4>
@@ -75,7 +75,10 @@ export const HomePage = () => {
                                     </article>
                                 </div>
                             </div>
-                            <button onClick={() => setToShowNews(state => !state)}>{toShowNews ? 'Hide news' : 'Show Bungie.net news'}</button>
+                            <button onClick={() => setToShowNews(state => !state)} className="newsButton"
+                                style={toShowNews ? { 'color': 'coral' } : { 'color': 'lightblue' }}>
+                                {toShowNews ? 'Hide news' : 'Show Bungie.net news'}
+                            </button>
                         </div>
                 }
                 {
@@ -86,7 +89,7 @@ export const HomePage = () => {
                             <>
                                 <h1>NEWS</h1>
                                 {news.map(el =>
-                                    <article key={el.identifier}>
+                                    <article key={el.identifier} className="newsContainer">
                                         <a href={`https://www.bungie.net/${el.link}`} target="_blank" rel="noreferrer"><h3>{el.displayName}</h3>
                                             <img src={`https://www.bungie.net/${el.image}`} alt="#" />
                                         </a>
