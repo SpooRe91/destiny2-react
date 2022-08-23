@@ -24,7 +24,7 @@ export const HomePage = () => {
                     setIsLoading(false);
                 } else {
                     setIsLoading(true);
-                    throw new Error('Unable to fetch news!')
+                    throw new Error('Unable to fetch news, please try again later!')
                 }
             }).catch(error => {
                 alert(error);
@@ -38,10 +38,10 @@ export const HomePage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.ErrorCode !== 2101 && data.Response.detail !== null && data.Response.detail !== undefined) {
-                    setClanData(data.Response.detail);
+                if (data?.ErrorCode !== 2101 && data?.Response?.detail !== null && data.Response?.detail !== undefined) {
+                    setClanData(data.Response?.detail);
                 } else {
-                    throw new Error("Unable to fetch clan info!");
+                    throw new Error("Unable to fetch clan info, please try again later!");
                 }
             })
             .catch(error => {
@@ -87,7 +87,7 @@ export const HomePage = () => {
                             &&
                             <div className="newsContainer">
                                 <h1>NEWS</h1>
-                                {news.map(el =>
+                                {news?.map(el =>
                                     <article key={el.identifier}>
                                         <a href={`https://www.bungie.net/${el.link}`} target="_blank" rel="noreferrer"><h3>{el.displayName}</h3>
                                             <img src={`https://www.bungie.net/${el.image}`} alt="#" />
