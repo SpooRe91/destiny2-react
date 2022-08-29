@@ -36,7 +36,6 @@ a {
 
 img {
     max-width: 500px;
-    margin: 5px auto;
 }
 
 .newsButton {
@@ -45,17 +44,32 @@ img {
     border: solid #7a7a5f;
     padding: 5px;
     border-radius: 10px;
+    position: fixed;
+    bottom: 2.8%;
+    left: 30%
 }
 
 .newsButton:hover {
     cursor: pointer;
 }
 
-.newsContainer {
+.newsContainer h1 {
+    color: antiquewhite;
     align-content: center;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    width: 50%;
+    font-size: 32px;
+}
+
+.newsContainer {
+    color: antiquewhite;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 25px;
     width: 50%;
 }
 
@@ -72,4 +86,11 @@ img {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    float: right;
+    margin: 25px;
+}
+
+.news-element {
+    margin: 20px;
+    width: 300px;
 }
