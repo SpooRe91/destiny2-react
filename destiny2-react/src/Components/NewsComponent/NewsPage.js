@@ -30,11 +30,11 @@ export const NewsPage = () => {
                 alert(error);
             });
 
-    }, [news.length]);
+    }, [news.length, API_KEY]);
 
     return (
         <>
-        <title>News</title>
+            <title>News</title>
             <div className="newsContainer">
                 {
                     <>
