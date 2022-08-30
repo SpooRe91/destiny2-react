@@ -10,7 +10,7 @@ export const ClanMemberComponent = ({ data }) => {
                 Name: <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}
                     target="_blank" rel="noreferrer">
                     <strong>
-                        {data?.bungieNetUserInfo.bungieGlobalDisplayName}
+                        {data?.bungieNetUserInfo.displayName}
                     </strong>
                 </a>
             </p>

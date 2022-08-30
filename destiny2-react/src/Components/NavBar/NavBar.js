@@ -25,7 +25,7 @@ export const NavBar = () => {
                     <NavLink to="/bungie/news">News</NavLink>
                 </li>
                 <li>
-                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer">About us & Join</a>
+                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer">About us & Join (redirects to Bungie.net)</a>
                 </li>
             </ul>
         </>
