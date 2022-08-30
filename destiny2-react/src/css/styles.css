@@ -7,8 +7,8 @@
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
-        /* overflow-x: hidden;
-        overflow-y: scroll; */
+        overflow-x: hidden;
+        overflow-y: scroll;
         overflow-y: overlay;
         overflow-x: overlay;
         font-family: 'Open Sans', sans-serif;
@@ -42,7 +42,7 @@ img {
     font-size: 25px;
     background: #545454e0;
     border: solid #7a7a5f;
-    padding: 5px;
+    padding: 8px;
     border-radius: 10px;
     position: fixed;
     bottom: 2.8%;
@@ -51,6 +51,13 @@ img {
 
 .newsButton:hover {
     cursor: pointer;
+    text-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+    transition: 0.1s;
+}
+
+.newsButton:not(:hover){
+    transition: 0.1s;
 }
 
 .newsContainer h1 {
@@ -74,9 +81,8 @@ img {
 }
 
 .homeContainer {
-    word-break: break-word;
-    white-space: pre-wrap;
-    width: 50%;
+    /* word-break: break-word; */
+    /* white-space: pre-wrap; */
     background-color: #000000ce;
     color: rgb(255, 255, 255);
     display: flex;
@@ -86,11 +92,23 @@ img {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    float: right;
     margin: 25px;
 }
 
 .news-element {
     margin: 20px;
     width: 300px;
+}
+
+.music-div {
+    text-align: center;
+    align-items: center;
+    color: coral;
+    font-weight: bold;
+    position: absolute;
+    top: 1.5%;
+    right: 10%;
+    width: 200px;
+    display: block;
+
 }

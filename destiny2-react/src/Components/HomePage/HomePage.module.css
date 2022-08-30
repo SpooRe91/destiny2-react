@@ -1,0 +1,47 @@
+.clan-member-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.clan-member-container div {
+    width: fit-content;
+}
+
+.player-name {
+    margin-top: 25px;
+}
+
+.showMembers {
+    font-size: 25px;
+    background: #545454e0;
+    border: solid #7a7a5f;
+    padding: 8px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 2.8%;
+    right: 10%;
+    
+}
+
+.showMembers:hover {
+    cursor: pointer;
+    color: antiquewhite;
+    text-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+    transition: 0.1s;
+
+}
+
+.showMembers:not(:hover) {
+    transition: 0.1s;
+}
+
+.player-avatar {
+    width: 200px;
+    height: 200px;
+}
