@@ -46,7 +46,7 @@ export const HomePage = () => {
     }, [API_KEY]);
 
     const creation = new Date(clanData?.creationDate);
-    console.log(clanMembers)
+
     return (
         <>
         <title>Home</title>
