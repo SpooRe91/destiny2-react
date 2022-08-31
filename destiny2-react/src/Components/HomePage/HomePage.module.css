@@ -32,9 +32,13 @@
     cursor: pointer;
     color: antiquewhite;
     text-shadow: 0px 0px 20px white;
-    border-radius: 20px;
+    border-radius: 15px;
     transition: 0.1s;
 
+}
+
+.showMembers:active {
+    color: white;
 }
 
 .showMembers:not(:hover) {

@@ -4,7 +4,6 @@ export const ClanMemberComponent = ({ data }) => {
     const dateJoined = new Date(data?.joinDate);
 
     return (
-
         <div>
             <p className={styles["player-name"]}>
                 Name: <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}

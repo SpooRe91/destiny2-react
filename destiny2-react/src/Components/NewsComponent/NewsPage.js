@@ -53,7 +53,9 @@ export const NewsPage = () => {
                                     ?
                                     news?.slice(0, 4).map(el => <NewsComponent key={el.identifier} data={el} />)
                                     :
-                                    news?.map(el => <NewsComponent key={el.identifier} data={el} />)}
+                                    [news?.map(el => <NewsComponent key={el.identifier} data={el} />),
+                                    window.scrollTo({ top: 800 })]
+                                }
                             </>
                         }
                     </>

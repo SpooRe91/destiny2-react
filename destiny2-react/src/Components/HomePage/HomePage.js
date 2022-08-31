@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ClockLoader } from "react-spinners";
+import { ScrollButton } from "../Common/ScrollButton";
 
 import { ClanMemberComponent } from "./ClanMemberComponent";
 import styles from "./HomePage.module.css";
@@ -45,11 +46,13 @@ export const HomePage = () => {
             });
     }, [API_KEY]);
 
+
+
     const creation = new Date(clanData?.creationDate);
 
     return (
         <>
-        <title>Home</title>
+            <title>Home</title>
             <h1 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto', 'background': '#000000ce', "padding": '10px', 'width': 'fit-content' }}>
                 Welcome to the BGs Destiny 2 clan, website!
                 <p style={{ 'fontSize': '14px' }}>
@@ -77,23 +80,33 @@ export const HomePage = () => {
                                         {clanData?.about}
                                     </article>
                                 </div>
-                                <button className={styles["showMembers"]} onClick={() => setToShowMembers(state => !state)} style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}>
+                                <button className={styles["showMembers"]}
+                                    onClick={() => [setToShowMembers(state => !state), window.scroll({ top: 800, behavior: 'auto' })]}
+                                    style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
+                                >
                                     {!toShowMembers ? "Show clan members" : "Hide clan members"}
 
                                 </button>
                             </div>
                             <div className={styles["clan-member-container"]}>
-                                {toShowMembers && clanMembers?.sort((a, b) => b.memberType - a.memberType)
-                                    .map(el =>
-                                        <h1 key={el.destinyUserInfo.membershipId}>
-                                            {el.memberType === 5 ? 'Clan Owner' : ""} <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />
-                                        </h1>
-                                    )}
+
+                                {toShowMembers &&
+
+                                    <>
+                                        {
+                                            clanMembers?.sort((a, b) => b.memberType - a.memberType)
+                                                .map(el =>
+                                                    <h1 key={el.destinyUserInfo.membershipId}>
+                                                        {el.memberType === 5 ? 'Clan Owner' : ""} <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />
+                                                    </h1>)
+                                        }
+                                    </>
+                                }
                             </div>
                         </>
                     }
+                    <ScrollButton />
                 </div>
-
             }
         </>
     )
