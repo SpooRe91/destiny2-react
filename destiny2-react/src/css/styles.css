@@ -46,7 +46,7 @@ img {
     border-radius: 10px;
     position: fixed;
     bottom: 2.8%;
-    left: 30%
+    right: 40%
 }
 
 .newsButton:hover {
@@ -80,8 +80,14 @@ img {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin: 25px;
-    width: 50%;
+    max-height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    right: 10%;
+    width: 560px;
+    resize: both;
+    margin: 5% 0px;
+    background: #0000007d;
 }
 
 .homeContainer {

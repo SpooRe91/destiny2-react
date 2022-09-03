@@ -1,0 +1,28 @@
+.toggle-background {
+    font-size: 25px;
+    background: #545454e0;
+    border: solid #7a7a5f;
+    padding: 8px;
+    border-radius: 10px;
+    top: 19.5%;
+    position: fixed;
+    right: 0%;
+    -webkit-transform: rotate(90deg);
+}
+
+.toggle-background:hover {
+    cursor: pointer;
+    color: antiquewhite;
+    text-shadow: 0px 0px 20px white;
+    border-radius: 15px;
+    transition: 0.1s;
+
+}
+
+.toggle-background:active {
+    color: white;
+}
+
+.toggle-background:not(:hover) {
+    transition: 0.1s;
+}

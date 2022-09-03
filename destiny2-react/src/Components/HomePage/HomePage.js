@@ -53,7 +53,7 @@ export const HomePage = () => {
     return (
         <>
             <title>Home</title>
-            <h1 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto', 'background': '#000000ce', "padding": '10px', 'width': 'fit-content' }}>
+            <h1>
                 Welcome to the BGs Destiny 2 clan, website!
                 <p style={{ 'fontSize': '14px' }}>
                     Created by: SpooRe
@@ -73,7 +73,7 @@ export const HomePage = () => {
                                 <h3>{clanData?.name}</h3>
                                 <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>
                                 <p>Our moto: </p>
-                                <h4>{clanData?.motto}</h4>
+                                <h4 style={{ 'textTransform': 'uppercase' }}>{clanData?.motto}</h4>
                                 <h4>Callsign: {clanData?.clanInfo.clanCallsign}</h4>
                                 <div>
                                     <article>
