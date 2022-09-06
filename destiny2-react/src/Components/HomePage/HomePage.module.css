@@ -9,23 +9,36 @@
 }
 
 .clan-member-container div {
-    width: fit-content;
+    width: 286px;
+    padding: 25px;
+    background: #54545480;
+    border: solid #7a7a5f;
+    margin: 15px;
+    border-radius: 10px;
 }
 
 .player-name {
     margin-top: 25px;
+    font-size: 22.5px;
+    text-decoration: none;
+}
+
+.player-name:hover {
+    transition: 0.1s;
+    text-decoration: underline;
+    text-shadow: 0px, 0px, 20px white;
 }
 
 .showMembers {
     font-size: 25px;
-    background: #545454e0;
+    background: #545454;
     border: solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
     position: fixed;
     bottom: 2.8%;
     right: 10%;
-
+    z-index: 10;
 }
 
 .showMembers:hover {
@@ -34,7 +47,6 @@
     text-shadow: 0px 0px 20px white;
     border-radius: 15px;
     transition: 0.1s;
-
 }
 
 .showMembers:active {
@@ -46,8 +58,20 @@
 }
 
 .player-avatar {
-    width: 200px;
+    width: 230px;
     height: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.player-avatar:hover {
+    transition: 0.1s;
+    border-radius: 20px;
+    border: solid #c55b5b;
+}
+
+.player-avatar:not(:hover) {
+    transition: 0.1s;
 }
 
 h1 {
@@ -57,4 +81,70 @@ h1 {
     background: rgba(0, 0, 0, 0.808);
     padding: 10px;
     width: fit-content;
+}
+
+.clan-member-sign {
+    background-image: linear-gradient(179deg, #c55b5b, #000000);
+    font-size: 30px;
+    border: solid #7a7a5f;
+    padding: 8px;
+    border-radius: 10px;
+    z-index: 10;
+    color: #ffffff;
+    text-shadow: 0px 0px 20px white;
+}
+
+.clan-member-search-sign {
+    background-image: linear-gradient(179deg, #998f8f, #000000);
+    font-size: 22.5px;
+    border: solid #7a7a5f;
+    padding: 8px;
+    border-radius: 10px;
+    z-index: 10;
+    color: #ffffff;
+    text-shadow: 0px 0px 20px white;
+}
+
+.input-field {
+    background: none;
+    outline: none;
+    border: none;
+    color: #DECBA4;
+    font-size: 20px;
+    width: 50%;
+    display: inline-block;
+    border-bottom: solid rgb(117, 117, 117);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 0 4px 4px 4px;
+    margin: 15px auto;
+    resize: none;
+}
+
+form.search {
+    width: 450px;
+    font-size: 20px;
+    display: flex;
+    margin: 20px auto;
+    border-radius: 8%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.input-field:focus {
+    color: #ffffff;
+    width: 60%;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    border-bottom: white solid;
+    background: none;
+    background-image: none;
+}
+
+.input-field:not(:focus) {
+    transition: 0.5s;
 }
