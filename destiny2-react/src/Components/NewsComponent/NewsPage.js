@@ -1,5 +1,4 @@
 import { ClockLoader } from "react-spinners";
-import { ScrollButton } from "../Common/ScrollButton";
 
 import { useEffect, useState } from "react";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
@@ -59,7 +58,6 @@ export const NewsPage = () => {
                                 }
                             </>
                         }
-                        <ScrollButton />
                     </>
                 }
             </div>
