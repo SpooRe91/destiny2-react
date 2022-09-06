@@ -10,6 +10,7 @@ export const HomePage = () => {
     const [clanData, setClanData] = useState(null);
     const [toShowMembers, setToShowMembers] = useState(false);
     const [clanMembers, setClanMembers] = useState(null);
+    const [filterValue, setFilterValue] = useState("");
 
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
@@ -46,9 +47,17 @@ export const HomePage = () => {
             });
     }, [API_KEY]);
 
+    const filterHandler = (e) => {
+        setFilterValue(e.target.value.toLowerCase().trim());
+    };
 
-
+    const filtered = clanMembers?.filter(x => x.bungieNetUserInfo.displayName.toLowerCase().includes(filterValue));
+    console.log(filtered);
     const creation = new Date(clanData?.creationDate);
+    const sortedAdmins = clanMembers?.filter(a => a.memberType >= 3);
+    const sortedMembers = clanMembers?.filter(a => a.memberType < 3)
+        .sort((a, b) => a.bungieNetUserInfo.displayName.localeCompare(b.bungieNetUserInfo.displayName));
+
 
     return (
         <>
@@ -84,21 +93,42 @@ export const HomePage = () => {
                                     onClick={() => [setToShowMembers(state => !state), window.scroll({ top: 800, behavior: 'auto' })]}
                                     style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
                                 >
-                                    {!toShowMembers ? "Show clan members" : "Hide clan members"}
-
+                                    {!toShowMembers ? "Show members" : "Hide members"}
                                 </button>
                             </div>
+
+                            {toShowMembers &&
+                                <>
+                                    <h1 className={styles["clan-member-sign"]}>CLAN MEMBERS</h1>
+                                    <div>
+                                        <h1 className={styles["clan-member-search-sign"]}>Search for guardian</h1>
+                                        <form className={styles["search"]} method="GET">
+                                            {<input type="text" className={styles["input-field"]} placeholder="Guardian name..." name="search"
+                                                defaultValue={filterValue} onChange={filterHandler} />}
+                                        </form>
+                                    </div>
+                                </>
+                            }
                             <div className={styles["clan-member-container"]}>
-
-                                {toShowMembers &&
-
+                                {toShowMembers
+                                    &&
                                     <>
                                         {
-                                            clanMembers?.sort((a, b) => b.memberType - a.memberType)
-                                                .map(el =>
-                                                    <h1 key={el.destinyUserInfo.membershipId}>
-                                                        {el.memberType === 5 ? 'Clan Owner' : ""} <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />
-                                                    </h1>)
+                                            filterValue
+                                                ?
+                                                filtered?.sort((a, b) => b.memberType - a.memberType)
+                                                    .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                :
+                                                <>
+                                                    {
+                                                        sortedAdmins?.sort((a, b) => b.memberType - a.memberType)
+                                                            .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                    }
+                                                    {
+                                                        sortedMembers?.sort((a, b) => b.memberType - a.memberType)
+                                                            .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                    }
+                                                </>
                                         }
                                     </>
                                 }
