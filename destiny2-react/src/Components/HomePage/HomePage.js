@@ -52,12 +52,12 @@ export const HomePage = () => {
     };
 
     const filtered = clanMembers?.filter(x => x.bungieNetUserInfo.displayName.toLowerCase().includes(filterValue));
-    console.log(filtered);
     const creation = new Date(clanData?.creationDate);
     const sortedAdmins = clanMembers?.filter(a => a.memberType >= 3);
     const sortedMembers = clanMembers?.filter(a => a.memberType < 3)
         .sort((a, b) => a.bungieNetUserInfo.displayName.localeCompare(b.bungieNetUserInfo.displayName));
-
+    console.log(sortedAdmins);
+    // User.UserInfoCard
 
     return (
         <>
@@ -101,7 +101,7 @@ export const HomePage = () => {
                                 <>
                                     <h1 className={styles["clan-member-sign"]}>CLAN MEMBERS</h1>
                                     <div>
-                                        <h1 className={styles["clan-member-search-sign"]}>Search for guardian</h1>
+                                        <h1 className={styles["clan-member-search-sign"]}>&#11167; Search for guardian &#11167;</h1>
                                         <form className={styles["search"]} method="GET">
                                             {<input type="text" className={styles["input-field"]} placeholder="Guardian name..." name="search"
                                                 defaultValue={filterValue} onChange={filterHandler} />}
