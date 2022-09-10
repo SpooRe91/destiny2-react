@@ -5,7 +5,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    gap: 5px;
 }
 
 .clan-member-element {
@@ -17,12 +17,13 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    box-shadow: 0px 0px 8px #636363, 0px 0px 15px 0px;
 }
 
 .info-container {
     display: flex;
     background: rgba(84, 84, 84, 0.5);
-    border: solid rgb(122, 122, 95);
+    border: solid #ffffff75;
     border-radius: 5px;
     margin: 0px 15px;
     place-content: center;

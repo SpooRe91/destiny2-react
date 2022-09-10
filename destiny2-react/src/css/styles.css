@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 @media (prefers-reduced-motion: no-preference) {
     html {
@@ -11,9 +14,9 @@
         overflow-y: scroll;
         overflow-y: overlay;
         overflow-x: overlay;
-        font-family: 'Open Sans', sans-serif;
     }
 }
+
 
 h1,
 h2,

@@ -6,6 +6,7 @@ import { NavBar } from './Components/NavBar/NavBar';
 import { NewsPage } from './Components/NewsComponent/NewsPage';
 import { ThemeSwitcher } from './Components/ThemeChanger/ThemeChanger';
 import { useEffect } from 'react';
+import { UsefulLinks } from './Components/UsefulLinks/UsefulLinks';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
       <ThemeSwitcher />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/bungie/news' element={<NewsPage />} />
+        <Route path='/bgs/news' element={<NewsPage />} />
+        <Route path='/bgs/links' element={<UsefulLinks />} />
       </Routes>
     </div>
   );
