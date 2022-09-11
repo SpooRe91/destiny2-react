@@ -46,6 +46,7 @@
 
 .menu li:hover {
     background: #e74c3c;
+    cursor: pointer;
 }
 
 .menu>li>a {

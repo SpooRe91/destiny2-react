@@ -71,13 +71,13 @@ export const ClanMemberComponent = ({ data }) => {
                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#03a9f4" }}>
                     Dungeon report
                 </a>
-                <a href={`https://crucible.report/report/3/${data?.destinyUserInfo.membershipId}/`}
-                    target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#ea1430" }}>
-                    Crucible report
-                </a>
                 <a href={`https://destinytrialsreport.com/report/3/${data?.destinyUserInfo.membershipId}/`}
                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#dc5062" }}>
                     Trials report
+                </a>
+                <a href={`https://crucible.report/report/3/${data?.destinyUserInfo.membershipId}/`}
+                    target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#ea1430" }}>
+                    Crucible report
                 </a>
             </div>
         </div >
