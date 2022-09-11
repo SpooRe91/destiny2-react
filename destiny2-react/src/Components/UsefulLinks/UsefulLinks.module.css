@@ -1,15 +1,15 @@
 .link-container {
+    align-content: flex-start;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    width: -moz-fit-content;
-    width: fit-content;
-    gap: 20px;
-    margin-top: 20px;
-    margin-left: 3.5em;
     float: left;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 3.5em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: fit-content;
 }
 
 .showLinks {
