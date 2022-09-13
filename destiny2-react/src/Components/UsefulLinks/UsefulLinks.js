@@ -11,10 +11,10 @@ export const UsefulLinks = () => {
         <>
             <div className={styles["link-container"]}>
 
-                <iframe src="https://raid.report/" frameborder="1" title="trials-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://raid.report/" frameborder="1" title="raid-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
                     Raid report
                 </iframe>
-                <iframe src="https://dungeon.report/" frameborder="1" title="braytech" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://dungeon.report/" frameborder="1" title="dungeon-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
                     Dungeon report
                 </iframe>
                 <iframe src="https://trials.report/" frameborder="1" title="trials-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
