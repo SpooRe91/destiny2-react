@@ -62,14 +62,9 @@ export const HomePage = () => {
     return (
         <>
             <title>Home</title>
-            <h1>
-                Welcome to the BGs Destiny 2 clan, website!
-                <p style={{ 'fontSize': '14px' }}>
-                    Created by: SpooRe
-                </p>
-            </h1>
+
             {
-                <div className="homeContainer">
+                <div className={styles["home-container"]}>
                     {isLoading
                         ?
                         <ClockLoader color="lightblue" size="50px" />
@@ -77,8 +72,14 @@ export const HomePage = () => {
                         clanData
                         &&
                         <>
-                            <div>
-                                <h1 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto 15px', "padding": '10px', "textDecoration": "underline" }}>CLAN INFO</h1>
+                            <h1>
+                                Welcome to the BGs Destiny 2 clan, website!
+                                <p style={{ 'fontSize': '14px' }}>
+                                    Created by: SpooRe
+                                </p>
+                            </h1>
+                            <div className={styles["clan-info"]}>
+                                <h2 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto 15px', "padding": '10px', "textDecoration": "underline" }}>CLAN INFO</h2>
                                 <h3>{clanData?.name}</h3>
                                 <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>
                                 <p>Our moto: </p>
@@ -89,6 +90,8 @@ export const HomePage = () => {
                                         {clanData?.about}
                                     </article>
                                 </div>
+                            </div>
+                            <div>
                                 <button className={styles["showMembers"]}
                                     onClick={() => [setToShowMembers(state => !state), window.scroll({ top: 800, behavior: 'auto' })]}
                                     style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}

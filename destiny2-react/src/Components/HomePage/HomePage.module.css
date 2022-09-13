@@ -8,6 +8,20 @@
     gap: 5px;
 }
 
+.home-container {
+    background-color: #000000ce;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 95%;
+    margin: auto;
+}
+
 .clan-member-element {
     display: flex;
     background: #00000080;
@@ -17,18 +31,31 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    box-shadow: 0px 0px 8px #636363, 0px 0px 15px 0px;
+}
+
+.clan-member-element:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+    transition: 0.1s;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px #000000, 0px 0px 15px 0px #fd8700;
+}
+
+.clan-member-element:not(:hover) {
+    transform: scale3d(1, 1, 1);
+    transition: 0.2s;
+    border-radius: 5px;
 }
 
 .info-container {
     display: flex;
     background: rgba(84, 84, 84, 0.5);
-    border: solid #ffffff75;
+    border: 2px solid #ffffff75;
     border-radius: 5px;
     margin: 0px 15px;
     place-content: center;
     width: inherit;
     flex-wrap: wrap;
+    padding: 5px;
 }
 
 .info-container p {
@@ -113,10 +140,35 @@
 h1 {
     font-size: 25px;
     color: white;
-    margin: 30px auto;
+    margin: 5px auto;
     background: rgba(0, 0, 0, 0.808);
     padding: 10px;
     width: fit-content;
+    max-width: 600px;
+    border: 1px solid #b15403a1;
+    border-radius: 10px;
+}
+
+.clan-info {
+    font-size: 25px;
+    color: white;
+    margin: 10px auto;
+    background: rgba(0, 0, 0, 0.808);
+    padding: 10px;
+    text-align: -webkit-center;
+    width: -moz-fit-content;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ff7800a1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    white-space: pre-wrap;
 }
 
 .clan-member-sign {
