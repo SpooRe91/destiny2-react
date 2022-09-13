@@ -9,6 +9,7 @@ export const UsefulLinks = () => {
 
     return (
         <>
+        <title>Useful links</title>
             <div className={styles["link-container"]}>
 
                 <iframe src="https://raid.report/" frameBorder="1" title="raid-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>

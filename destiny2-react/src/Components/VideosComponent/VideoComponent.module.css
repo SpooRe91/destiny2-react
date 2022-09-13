@@ -8,6 +8,18 @@
     width: 100%;
 }
 
+.all-buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 50px auto;
+
+}
+
 .single-video-container {
     display: flex;
     flex-direction: column;
@@ -15,7 +27,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
+    margin: 20px auto;
     background-color: #00000044;
     height: 840px;
     width: 1489px;
@@ -24,13 +36,27 @@
 }
 
 
-.video-label {
+.video-button {
     color: coral;
     background: black;
     font-size: 25px;
     border-radius: 10px;
-    padding: 5px;
-    margin: 30px auto 0px;
+    padding: 8px;
+    margin: 30px 15px;
+    box-shadow: 0px 0px 20px coral, 0px 0px 20px black;
+    text-decoration: none;
+}
+
+.video-button:hover {
+    transition: 0.1s;
+    text-decoration: underline;
+    box-shadow: 0px 0px 20px rgb(227, 243, 3), 0px 0px 20px black;
+    color: rgb(102, 255, 0);
+    cursor: pointer;
+}
+
+.video-button:not(:hover) {
+    transition: 0.1s;
 }
 
 iframe {
@@ -38,4 +64,80 @@ iframe {
     height: 100%;
     resize: both;
     overflow: auto;
+}
+
+.main-header {
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0px 0px 20px coral, 0px 0px 20px black;
+    margin: 20px auto;
+    background-color: black;
+}
+
+hr {
+    width: 100%;
+    height: 10px;
+    background: black;
+    border: none;
+    margin: 10px;
+}
+
+.video-search-sign {
+    background-image: linear-gradient(179deg, #998f8f, #000000);
+    font-size: 22.5px;
+    border: solid #7a7a5f;
+    padding: 7px;
+    border-radius: 10px;
+    z-index: 10;
+    color: #ffffff;
+    text-shadow: 0px 0px 20px white;
+    margin: 15px auto;
+}
+
+form.search {
+    width: 450px;
+    font-size: 20px;
+    display: flex;
+    margin: 20px auto;
+    border-radius: 8%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.input-field {
+    background: none;
+    outline: none;
+    border: none;
+    color: coral;
+    font-size: 22.5px;
+    font-weight: 500;
+    width: 50%;
+    display: inline-block;
+    border-bottom: solid rgb(117, 117, 117);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #000000;
+}
+
+
+.input-field:focus {
+    color: whitesmoke;
+    width: 60%;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    border-bottom: white solid;
+    background: none;
+    background-image: none;
+    background-color: #000000;
+}
+
+.input-field:not(:focus) {
+    transition: 0.5s;
+    background-color: #000000;
 }

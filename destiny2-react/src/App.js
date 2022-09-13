@@ -7,7 +7,9 @@ import { NewsPage } from './Components/NewsComponent/NewsPage';
 import { ThemeSwitcher } from './Components/ThemeChanger/ThemeChanger';
 import { useEffect } from 'react';
 import { UsefulLinks } from './Components/UsefulLinks/UsefulLinks';
-import { VideosComponent } from './Components/VideosComponent/VideosComponent';
+import { VideosCatalogue } from './Components/VideosComponent/VideosCatalogue';
+import { VideoComponent } from './Components/VideosComponent/VideoComponent';
+
 
 function App() {
 
@@ -23,7 +25,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/bgs/news' element={<NewsPage />} />
         <Route path='/bgs/links' element={<UsefulLinks />} />
-        <Route path='/bgs/videos' element={<VideosComponent />} />
+        <Route path='/bgs/videos' element={<VideosCatalogue />} />
+        <Route path='/bgs/videos/:id' element={<VideoComponent />} />
       </Routes>
     </div>
   );
