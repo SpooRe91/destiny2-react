@@ -10,14 +10,18 @@
 
 .all-buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 92%;
     flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 35px;
+    margin: 40px;
+    border-left: 2px #ff2a2a solid;
+    border-right: 2px #ff2a2a solid;
+    float: left;
     align-content: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 50px auto;
-
+    background: #00000078;
+    justify-content: flex-start;
 }
 
 .single-video-container {
@@ -42,21 +46,27 @@
     font-size: 25px;
     border-radius: 10px;
     padding: 8px;
-    margin: 30px 15px;
-    box-shadow: 0px 0px 20px coral, 0px 0px 20px black;
     text-decoration: none;
+    border: solid 2px #838383;
+    margin: 10px;
+}
+
+.video-button-button {
+    background: none;
+    border: none;
 }
 
 .video-button:hover {
-    transition: 0.1s;
-    text-decoration: underline;
-    box-shadow: 0px 0px 20px rgb(227, 243, 3), 0px 0px 20px black;
-    color: rgb(102, 255, 0);
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 20px rgb(255, 0, 0), 0px 0px 20px black;
     cursor: pointer;
+    transition: 0.1s;
+    transform-style: preserve-3d;
 }
 
 .video-button:not(:hover) {
     transition: 0.1s;
+    transform: scale3d(1, 1, 1);
 }
 
 iframe {

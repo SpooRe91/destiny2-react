@@ -11,14 +11,14 @@ export const ThemeSwitcher = () => {
 
         if (currTheme === 'dark') {
 
-            sessionStorage.setItem('theme', "url('../images/Dark wallpaper2.png')");
-            localStorage.setItem('theme', "url('../images/Dark wallpaper2.png')");
+            sessionStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGsdark.png')");
+            localStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGsdark.png')");
             sessionStorage.setItem('mode', 'dark');
             localStorage.setItem('mode', 'dark');
         } else {
 
-            sessionStorage.setItem('theme', "url('../images/Light wallpaper2.jpg')");
-            localStorage.setItem('theme', "url('../images/Light wallpaper2.jpg')");
+            sessionStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGslight.jpg')");
+            localStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGslight.jpg')");
             sessionStorage.setItem('mode', 'light');
             localStorage.setItem('mode', 'light');
         }

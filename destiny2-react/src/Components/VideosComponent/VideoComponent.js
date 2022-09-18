@@ -1,12 +1,14 @@
 import { useNavigate, useParams } from "react-router"
 import styles from "./VideoComponent.module.css"
-export const VideoComponent = () => {
+export const VideoComponent = ({ videoName }) => {
 
     const { id } = useParams();
     const navigate = useNavigate();
 
     return (
         <div className={styles["all-videos-container"]}>
+            <title>{videoName}</title>
+            <h1>{videoName}</h1>
             <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
             <div className={styles["single-video-container"]}>
                 <iframe name="spoore"

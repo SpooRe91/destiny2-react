@@ -34,10 +34,11 @@
 }
 
 .clan-member-element:hover {
-    transform: scale3d(1.05, 1.05, 1.05);
-    transition: 0.1s;
+    transform: translate3d(-10px, -15px, 0px) scale3d(1.05, 1.05, 1.05);
+    transition: 0.2s;
     border-radius: 15px;
     box-shadow: 0px 0px 8px #000000, 0px 0px 15px 0px #fd8700;
+    transform-style: preserve-3d;
 }
 
 .clan-member-element:not(:hover) {

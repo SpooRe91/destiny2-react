@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { UsefulLinks } from './Components/UsefulLinks/UsefulLinks';
 import { VideosCatalogue } from './Components/VideosComponent/VideosCatalogue';
 import { VideoComponent } from './Components/VideosComponent/VideoComponent';
+import { useState } from 'react';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
   useEffect(() => {
     document.body.style.backgroundImage = (sessionStorage.getItem('theme'));
   }, []);
+
+  const [videoName, setVideoName] = useState('');
 
   return (
     <div className="App">
@@ -25,8 +28,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/bgs/news' element={<NewsPage />} />
         <Route path='/bgs/links' element={<UsefulLinks />} />
-        <Route path='/bgs/videos' element={<VideosCatalogue />} />
-        <Route path='/bgs/videos/:id' element={<VideoComponent />} />
+        <Route path='/bgs/videos' element={<VideosCatalogue setVideoName={setVideoName} />} />
+        <Route path='/bgs/videos/:id' element={<VideoComponent videoName={videoName} />} />
       </Routes>
     </div>
   );
