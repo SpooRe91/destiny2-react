@@ -5,6 +5,9 @@ import { ScrollButton } from "../Common/ScrollButton";
 
 import { ClanMemberComponent } from "./ClanMemberComponent";
 import styles from "./HomePage.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers, faUsersSlash } from '@fortawesome/free-solid-svg-icons'
+
 export const HomePage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -99,7 +102,17 @@ export const HomePage = () => {
                                     onClick={() => [setToShowMembers(state => !state), window.scroll({ top: 800, behavior: 'auto' })]}
                                     style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
                                 >
-                                    {!toShowMembers ? "Show members" : "Hide members"}
+                                    {
+                                        !toShowMembers ?
+                                            <>
+                                                {"Show members"} < FontAwesomeIcon icon={faUsers} />
+                                            </>
+                                            :
+                                            <>
+                                                {"Hide members"} < FontAwesomeIcon icon={faUsersSlash} />
+                                            </>
+
+                                    }
                                 </button>
                             </div>
 
