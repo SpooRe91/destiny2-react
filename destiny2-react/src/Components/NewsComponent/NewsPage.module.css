@@ -18,7 +18,7 @@
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 1.7em;
     color: white;
     margin: auto;
     background: rgba(0, 0, 0, 0.808);
@@ -31,7 +31,7 @@ h1 {
 }
 
 .news-button {
-    font-size: 25px;
+    font-size: 1.2em;
     background: #545454e0;
     border: solid #7a7a5f;
     padding: 8px;
