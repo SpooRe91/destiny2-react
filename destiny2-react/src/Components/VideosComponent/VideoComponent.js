@@ -8,7 +8,7 @@ export const VideoComponent = ({ videoName }) => {
     return (
         <div className={styles["all-videos-container"]}>
             <title>{videoName}</title>
-            <h1>{videoName}</h1>
+            <h1 className={styles["video-header"]}>{videoName ? videoName : "Current video"}</h1>
             <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
             <div className={styles["single-video-container"]}>
                 <iframe name="spoore"

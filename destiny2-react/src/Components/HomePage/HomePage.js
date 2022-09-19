@@ -76,17 +76,17 @@ export const HomePage = () => {
                         &&
                         <>
                             <div className={styles["clan-info"]}>
-                                <h1>
+                                <h1 className={styles["welcome-h1"]}>
                                     Welcome to the BGs Destiny 2 clan, website!
-                                    <p style={{ 'fontSize': '14px' }}>
+                                    <p>
                                         Created by: SpooRe
                                     </p>
                                 </h1>
-                                <h2 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto 15px', "padding": '10px', "textDecoration": "underline" }}>CLAN INFO</h2>
+                                <h2 className={styles["head-2"]}>CLAN INFO</h2>
                                 <h3>{clanData?.name}</h3>
                                 <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>
                                 <p>Our moto: </p>
-                                <h4 style={{ 'textTransform': 'uppercase' }}>{clanData?.motto}</h4>
+                                <h4>{clanData?.motto}</h4>
                                 <h4>Callsign: {clanData?.clanInfo.clanCallsign}</h4>
                                 <div>
                                     <article>

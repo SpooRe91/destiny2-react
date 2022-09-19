@@ -64,7 +64,7 @@ export const ClanMemberDetails = () => {
                                     {clanMembersInfo?.bungieNetUserInfo.displayName}
                                 </p>
                             </a>
-                            <p style={{ "margin": "15px auto", "textAlign": 'center', "fontSize": "25px" }}> <b style={{ "color": "white", "fontSize": "25px" }}>Title</b>: {
+                            <p className={styles["title-paragraph"]}> <b>Title</b>: {
                                 clanMembersInfo?.memberType === 5 &&
                                 <span style={{ "color": '#cf5b5b' }}>
                                     <strong>

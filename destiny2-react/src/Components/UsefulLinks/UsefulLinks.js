@@ -9,19 +9,19 @@ export const UsefulLinks = () => {
 
     return (
         <>
-        <title>Useful links</title>
+            <title>Useful links</title>
             <div className={styles["link-container"]}>
 
-                <iframe src="https://raid.report/" frameBorder="1" title="raid-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://raid.report/" frameBorder="1" title="raid-report">
                     Raid report
                 </iframe>
-                <iframe src="https://dungeon.report/" frameBorder="1" title="dungeon-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://dungeon.report/" frameBorder="1" title="dungeon-report">
                     Dungeon report
                 </iframe>
-                <iframe src="https://trials.report/" frameBorder="1" title="trials-report" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://trials.report/" frameBorder="1" title="trials-report">
                     Trials report
                 </iframe>
-                <iframe src="https://bray.tech/" frameBorder="1" title="braytech" style={{ "width": "1200px", "height": "850px", "overflow": "auto" }}>
+                <iframe src="https://bray.tech/" frameBorder="1" title="braytech">
                     Braytech
                 </iframe>
             </div>
