@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 90px;
+    margin: 80px auto 40px;
 }
 
 .all-buttons-container {
@@ -34,24 +34,35 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    background-color: #00000044;
+    margin:auto;
     height: 840px;
     width: 1489px;
     resize: both;
     overflow: auto;
 }
 
+.video-header {
+    font-size: 1.7em;
+    color: white;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.808);
+    padding: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 600px;
+    border: 1px solid #b15403a1;
+    border-radius: 10px;
+}
 
 .video-button {
     color: coral;
     background: black;
-    font-size: 25px;
+    font-size: 1.8em;
     border-radius: 10px;
     padding: 8px;
     text-decoration: none;
     border: solid 2px #838383;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .video-button-button {
@@ -77,6 +88,7 @@ iframe {
     height: 100%;
     resize: both;
     overflow: auto;
+    margin: 20px auto;
 }
 
 .main-header {
@@ -85,64 +97,4 @@ iframe {
     box-shadow: 0px 0px 20px coral, 0px 0px 20px black;
     margin: 20px auto;
     background-color: black;
-}
-
-.video-search-sign {
-    background-image: linear-gradient(179deg, #998f8f, #000000);
-    font-size: 22.5px;
-    border: solid #7a7a5f;
-    padding: 7px;
-    border-radius: 10px;
-    z-index: 10;
-    color: #ffffff;
-    text-shadow: 0px 0px 20px white;
-    margin: 15px auto;
-}
-
-form.search {
-    width: 450px;
-    font-size: 20px;
-    display: flex;
-    margin: 20px auto;
-    border-radius: 8%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-}
-
-.input-field {
-    background: none;
-    outline: none;
-    border: none;
-    color: coral;
-    font-size: 22.5px;
-    font-weight: 500;
-    width: 50%;
-    display: inline-block;
-    border-bottom: solid rgb(117, 117, 117);
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 10px;
-    margin: auto;
-    background-color: #000000;
-}
-
-
-.input-field:focus {
-    color: whitesmoke;
-    width: 60%;
-    transition: 0.5s;
-    border: none;
-    outline: none;
-    border-bottom: white solid;
-    background: none;
-    background-image: none;
-    background-color: #000000;
-}
-
-.input-field:not(:focus) {
-    transition: 0.5s;
-    background-color: #000000;
 }
