@@ -1,0 +1,128 @@
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 50%;
+    margin: 90px auto;
+    border: 2px solid #bd5934;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    background: #000000bd;
+
+}
+
+.profile-name {
+    margin-top: 20px;
+    font-size: 22.5px;
+    text-decoration: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #c55b5b;
+}
+
+.profile-name:hover {
+    transition: 0.1s;
+    text-decoration: underline;
+    text-shadow: 0px 0px 20px coral, 0px 0px 20px rgb(255, 255, 255);
+}
+
+.profile-name>p {
+    font-size: 29px;
+    color: white;
+    background: rgba(0, 0, 0, 0.89);
+    padding: 10px;
+    width: fit-content;
+    max-width: inherit;
+    border: 1px solid #b15403a1;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+
+.player-avatar {
+    width: 230px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.player-avatar:hover {
+    transition: 0.1s;
+    border-radius: 20px;
+    border: solid #c55b5b;
+}
+
+.player-avatar:not(:hover) {
+    transition: 0.1s;
+}
+
+.profile-container p {
+    text-align: left;
+    margin: auto;
+}
+
+section {
+    margin: 10px auto;
+    border: 3px solid #7a7a5f;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4b4b47;
+}
+
+article {
+    margin: 15px auto;
+}
+
+section>article>h3 {
+    margin: 10px auto;
+    font-size: 23px;
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+section article p {
+    text-align: left;
+    line-height: 9mm;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(230, 213, 191);
+}
+
+section>article>p>b {
+    color: rgb(245, 132, 91);
+}
+
+.video-button {
+    color: coral;
+    background: black;
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 8px;
+    text-decoration: none;
+    border: solid 2px #838383;
+    margin: 10px;
+}
+
+.video-button:hover {
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 20px rgb(255, 0, 0), 0px 0px 20px black;
+    cursor: pointer;
+    transition: 0.1s;
+    transform-style: preserve-3d;
+}
+
+.video-button:not(:hover) {
+    transition: 0.1s;
+    transform: scale3d(1, 1, 1);
+}
+
+hr {
+    border: solid #616161;
+    height: 5px;
+    border-radius: 10px;
+    width: 100%;
+}

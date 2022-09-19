@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 
 export const ClanMemberComponent = ({ data }) => {
     const dateJoined = new Date(data?.joinDate);
+    const id = (data?.bungieNetUserInfo.membershipId);
 
     return (
         <div className={styles["clan-member-element"]}>
@@ -33,8 +35,7 @@ export const ClanMemberComponent = ({ data }) => {
                     }
                 </p>
                 <p>
-                    Name: <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}
-                        target="_blank" rel="noreferrer" className={styles["player-name"]}>
+                    Name: <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
                         {data.memberType === 5 &&
                             <strong style={{ "color": '#ff0000a1' }}>
                                 {data?.bungieNetUserInfo.displayName}
@@ -52,17 +53,18 @@ export const ClanMemberComponent = ({ data }) => {
                                 {data?.bungieNetUserInfo.displayName}
                             </strong>
                         }
-                    </a>
+                    </Link>
                 </p>
                 <p className={styles["player-joined"]}>
                     Joined: <strong>{`${dateJoined.getDate()}/${dateJoined.getMonth() + 1}/${dateJoined.getFullYear()}`}</strong>
                 </p>
                 {/* </div> */}
 
-                <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}
-                    target="_blank" rel="noreferrer">
+                <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
                     <img src={`https://www.bungie.net/${data?.bungieNetUserInfo.iconPath}`} alt="#" className={styles["player-avatar"]} />
-                </a>
+                </Link>
+                <p>Link to Bungie.net - <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}
+                    target="_blank" rel="noreferrer" className={styles["player-name"]}>here</a></p>
                 <a href={`https://raid.report/pc/${data?.destinyUserInfo.membershipId}/`}
                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#4db6ac" }}>
                     Raid report

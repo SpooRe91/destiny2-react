@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import stlyes from './ThemeChanger.module.css';
+import darkTheme from "../../backgrounds/destiny2oldbulgarianstyleBGsdark.png"
+import lightTheme from "../../backgrounds/destiny2oldbulgarianstyleBGslight.jpg"
 export const ThemeSwitcher = () => {
 
     const [currTheme, setCurrTheme] = useState(localStorage.getItem("mode")
@@ -11,14 +13,14 @@ export const ThemeSwitcher = () => {
 
         if (currTheme === 'dark') {
 
-            sessionStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGsdark.png')");
-            localStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGsdark.png')");
+            sessionStorage.setItem('theme', `url(${darkTheme})`);
+            localStorage.setItem('theme', `url(${darkTheme})`);
             sessionStorage.setItem('mode', 'dark');
             localStorage.setItem('mode', 'dark');
         } else {
 
-            sessionStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGslight.jpg')");
-            localStorage.setItem('theme', "url('../images/destiny2oldbulgarianstyleBGslight.jpg')");
+            sessionStorage.setItem('theme', `url(${lightTheme})`);
+            localStorage.setItem('theme', `url(${lightTheme})`);
             sessionStorage.setItem('mode', 'light');
             localStorage.setItem('mode', 'light');
         }

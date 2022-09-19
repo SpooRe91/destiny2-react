@@ -19,7 +19,7 @@
     align-items: center;
     padding: 10px;
     width: 95%;
-    margin: auto;
+    margin: 80px auto;
 }
 
 .clan-member-element {
@@ -34,7 +34,7 @@
 }
 
 .clan-member-element:hover {
-    transform: translate3d(-10px, -15px, 0px) scale3d(1.05, 1.05, 1.05);
+    transform: translate3d(-7px, -10px, 0px);
     transition: 0.2s;
     border-radius: 15px;
     box-shadow: 0px 0px 8px #000000, 0px 0px 15px 0px #fd8700;
@@ -154,6 +154,7 @@ h1 {
     font-size: 25px;
     color: white;
     margin: 10px auto;
+    margin-top: 3em;
     background: rgba(0, 0, 0, 0.808);
     padding: 10px;
     text-align: -webkit-center;

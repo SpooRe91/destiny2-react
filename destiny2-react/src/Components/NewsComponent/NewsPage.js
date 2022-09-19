@@ -2,6 +2,10 @@ import { ClockLoader } from "react-spinners";
 
 import { useEffect, useState } from "react";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
+import { ScrollButton } from "../Common/ScrollButton";
+
+import styles from "./NewsPage.module.css"
+
 export const NewsPage = () => {
 
     const [news, setNews] = useState([]);
@@ -35,16 +39,16 @@ export const NewsPage = () => {
     return (
         <>
             <title>News</title>
-            <div className="newsContainer">
+            <div className={styles["newsContainer"]}>
                 {
                     <>
-                        <h1 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto 15px', 'background': '#000000ce', "padding": '10px' }}>NEWS</h1>
+                        <h1>NEWS</h1>
                         {isLoading
                             ?
                             <ClockLoader color="lightblue" size="50px" />
                             :
                             <>
-                                <button onClick={() => setToShowNews(state => !state)} className="newsButton"
+                                <button onClick={() => setToShowNews(state => !state)} className={styles["news-button"]}
                                     style={toShowNews ? { 'color': 'coral' } : { 'color': 'whitesmoke' }}>
                                     {toShowNews ? 'Show latest news' : 'Show ALL Bungie.net news'}
                                 </button>
@@ -56,6 +60,7 @@ export const NewsPage = () => {
                                     [news?.map(el => <NewsComponent key={el.identifier} data={el} />),
                                     window.scrollTo({ top: 800 })]
                                 }
+                                <ScrollButton className={styles["news-button"]}/>
                             </>
                         }
                     </>

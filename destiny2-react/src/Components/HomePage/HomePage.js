@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ClockLoader } from "react-spinners";
+import { getClanInfo, getClanMembers } from "../../Services/requests";
 import { ScrollButton } from "../Common/ScrollButton";
 
 import { ClanMemberComponent } from "./ClanMemberComponent";
@@ -15,41 +16,43 @@ export const HomePage = () => {
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
     useEffect(() => {
-        fetch('https://www.bungie.net/Platform/GroupV2/4131725', {
-            headers: {
-                'content-type': 'application/json',
-                "X-API-Key": API_KEY
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data?.ErrorCode !== 2101 && data?.Response?.detail !== null && data.Response?.detail !== undefined) {
-                    setClanData(data.Response?.detail);
+
+        getClanInfo()
+            .then(clanInfo => {
+                if (clanInfo?.ErrorCode !== 2101
+                    && clanInfo?.Response?.detail !== null
+                    && clanInfo.Response?.detail !== undefined) {
+                    setClanData(clanInfo.Response?.detail);
                     setIsLoading(state => false)
                 } else {
                     throw new Error("Unable to fetch clan info, please try again later!");
                 }
             })
             .catch(error => {
-                alert(error);
-            });
-
-        fetch('https://www.bungie.net/Platform/GroupV2/4131725/Members/', {
-            headers: {
-                'content-type': 'application/json',
-                "X-API-Key": API_KEY
-            }
-        })
-            .then(res => res.json())
-            .then(data => setClanMembers(data.Response.results))
+                alert(error)
+            })
+        // ---------------------------------------------------------------------------------------------------
+        getClanMembers()
+            .then(membersData => {
+                if (membersData?.ErrorCode !== 2101
+                    && membersData.Response !== null
+                    && membersData.Response !== undefined) {
+                    setClanMembers(sate => membersData.Response.results);
+                    setIsLoading(state => false)
+                } else {
+                    throw new Error('Unble to fetch clan members, please try again later!')
+                }
+            })
             .catch(error => {
-                alert(error);
-            });
+                alert(error)
+            })
     }, [API_KEY]);
+
 
     const filterHandler = (e) => {
         setFilterValue(e.target.value.toLowerCase().trim());
     };
+
 
     const filtered = clanMembers?.filter(x => x.bungieNetUserInfo.displayName.toLowerCase().includes(filterValue));
     const creation = new Date(clanData?.creationDate);
@@ -72,13 +75,13 @@ export const HomePage = () => {
                         clanData
                         &&
                         <>
-                            <h1>
-                                Welcome to the BGs Destiny 2 clan, website!
-                                <p style={{ 'fontSize': '14px' }}>
-                                    Created by: SpooRe
-                                </p>
-                            </h1>
                             <div className={styles["clan-info"]}>
+                                <h1>
+                                    Welcome to the BGs Destiny 2 clan, website!
+                                    <p style={{ 'fontSize': '14px' }}>
+                                        Created by: SpooRe
+                                    </p>
+                                </h1>
                                 <h2 style={{ 'fontSize': '25px', 'color': 'white', 'margin': 'auto 15px', "padding": '10px', "textDecoration": "underline" }}>CLAN INFO</h2>
                                 <h3>{clanData?.name}</h3>
                                 <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>

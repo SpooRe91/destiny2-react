@@ -10,6 +10,8 @@ import { UsefulLinks } from './Components/UsefulLinks/UsefulLinks';
 import { VideosCatalogue } from './Components/VideosComponent/VideosCatalogue';
 import { VideoComponent } from './Components/VideosComponent/VideoComponent';
 import { useState } from 'react';
+import { ClanMemberDetails } from './Components/Details/ClanMemberDetails';
+import { Footer } from './Components/Common/Footer';
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
   }, []);
 
   const [videoName, setVideoName] = useState('');
+
 
   return (
     <div className="App">
@@ -30,7 +33,9 @@ function App() {
         <Route path='/bgs/links' element={<UsefulLinks />} />
         <Route path='/bgs/videos' element={<VideosCatalogue setVideoName={setVideoName} />} />
         <Route path='/bgs/videos/:id' element={<VideoComponent videoName={videoName} />} />
+        <Route path='/bgs/details/:id' element={<ClanMemberDetails />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

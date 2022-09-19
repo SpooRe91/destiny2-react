@@ -6,22 +6,25 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 90px;
 }
 
 .all-buttons-container {
     display: flex;
     flex-direction: row;
     width: 92%;
+    max-height: 40em;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 35px;
-    margin: 40px;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    margin: 140px 45px;
     border-left: 2px #ff2a2a solid;
     border-right: 2px #ff2a2a solid;
     float: left;
     align-content: center;
-    background: #00000078;
-    justify-content: flex-start;
+    justify-content: center;
+    overflow-x: auto;
 }
 
 .single-video-container {
@@ -82,14 +85,6 @@ iframe {
     box-shadow: 0px 0px 20px coral, 0px 0px 20px black;
     margin: 20px auto;
     background-color: black;
-}
-
-hr {
-    width: 100%;
-    height: 10px;
-    background: black;
-    border: none;
-    margin: 10px;
 }
 
 .video-search-sign {
