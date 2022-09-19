@@ -30,7 +30,7 @@
     text-transform: uppercase;
     text-decoration: none;
     font-family: Arial, Helvetica;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .menu li:hover {
