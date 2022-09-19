@@ -166,9 +166,11 @@
     border: solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
+    text-align: center;
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
     margin: 10px auto;
+    width: fit-content;
 }
 
 .clan-member-search-sign {
@@ -180,6 +182,8 @@
     z-index: 10;
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
+    margin: 10px auto;
+    width: fit-content;
 }
 
 .input-field {
