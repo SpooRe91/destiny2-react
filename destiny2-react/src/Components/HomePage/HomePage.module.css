@@ -79,7 +79,7 @@
 
 .player-name {
     margin-top: 25px;
-    font-size: 22.5px;
+    font-size: 1.2em;
     text-decoration: none;
     white-space: pre-wrap;
     word-break: break-word;
@@ -93,13 +93,13 @@
 }
 
 .showMembers {
-    font-size: 25px;
+    font-size: 1.4em;
     background: #545454;
     border: solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
     position: fixed;
-    bottom: 2.8%;
+    bottom: 6.8%;
     right: 10%;
     z-index: 10;
 }
@@ -138,23 +138,10 @@
     transition: 0.1s;
 }
 
-h1 {
-    font-size: 25px;
-    color: white;
-    margin: 5px auto;
-    background: rgba(0, 0, 0, 0.808);
-    padding: 10px;
-    width: fit-content;
-    max-width: 600px;
-    border: 1px solid #b15403a1;
-    border-radius: 10px;
-}
-
 .clan-info {
-    font-size: 25px;
+    font-size: 1.1em;
     color: white;
     margin: 10px auto;
-    margin-top: 3em;
     background: rgba(0, 0, 0, 0.808);
     padding: 10px;
     text-align: -webkit-center;
@@ -175,18 +162,18 @@ h1 {
 
 .clan-member-sign {
     background-image: linear-gradient(179deg, #c55b5b, #000000);
-    font-size: 30px;
+    font-size: 1.7em;
     border: solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
-    z-index: 10;
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
+    margin: 10px auto;
 }
 
 .clan-member-search-sign {
     background-image: linear-gradient(179deg, #998f8f, #000000);
-    font-size: 22.5px;
+    font-size: 1.3em;
     border: solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
@@ -200,7 +187,7 @@ h1 {
     outline: none;
     border: none;
     color: #DECBA4;
-    font-size: 20px;
+    font-size: 1em;
     width: 50%;
     display: inline-block;
     border-bottom: solid rgb(117, 117, 117);
@@ -213,7 +200,7 @@ h1 {
 
 form.search {
     width: 450px;
-    font-size: 20px;
+    font-size: 1.2em;
     display: flex;
     margin: 20px auto;
     border-radius: 8%;
@@ -240,7 +227,7 @@ form.search {
 }
 
 .raid-report {
-    font-size: 14.5px;
+    font-size: 1em;
     background: #545454;
     border: solid #7a7a5f;
     padding: 8px;
@@ -266,4 +253,33 @@ form.search {
 
 .raid-report:not(:hover) {
     transition: 0.1s;
+}
+
+.head-2 {
+    font-size: 1.5em;
+    color: white;
+    margin: auto 15px;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.welcome-h1 {
+    font-size: 1.5em;
+    color: white;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.808);
+    padding: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 600px;
+    border: 1px solid #b15403a1;
+    border-radius: 10px;
+}
+
+.welcome-h1>p {
+    font-size: 0.7em;
+}
+
+.clan-info>h4 {
+    text-transform: uppercase;
 }
