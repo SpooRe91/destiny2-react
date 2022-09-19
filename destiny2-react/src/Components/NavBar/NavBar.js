@@ -1,5 +1,7 @@
 
 // import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faVideo, faLink, faImage } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
 import styles from './NavBar.module.css';
 // import cryptoRandomString from 'crypto-random-string';
@@ -35,19 +37,19 @@ export const NavBar = () => {
         <>
             <ul className={styles["menu"]}>
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/"><FontAwesomeIcon icon={faHouse} /> Home</NavLink>
                 </li>
                 <li>
                     <NavLink to="#">Some Stuff</NavLink>
                     <ul className={styles["submenu"]}>
                         <li>
-                            <NavLink to="">Photos</NavLink>
+                            <NavLink to=""><FontAwesomeIcon icon={faImage} /> Photos</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/bgs/videos">Videos</NavLink>
+                            <NavLink to="/bgs/videos"><FontAwesomeIcon icon={faVideo} /> Videos</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/bgs/links">Useful links</NavLink>
+                            <NavLink to="/bgs/links"><FontAwesomeIcon icon={faLink} /> Useful links</NavLink>
                         </li>
                     </ul>
                 </li>
