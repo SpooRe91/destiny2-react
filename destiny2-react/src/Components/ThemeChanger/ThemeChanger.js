@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import stlyes from './ThemeChanger.module.css';
 import darkTheme from "../../backgrounds/destiny2oldbulgarianstyleBGsdark.png"
 import lightTheme from "../../backgrounds/destiny2oldbulgarianstyleBGslight.jpg"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 export const ThemeSwitcher = () => {
 
     const [currTheme, setCurrTheme] = useState(localStorage.getItem("mode")
@@ -28,12 +31,23 @@ export const ThemeSwitcher = () => {
         document.body.style.backgroundImage = (localStorage.getItem('theme'));
     }, [currTheme])
 
-
     return (
         <>
             <button onClick={() => setCurrTheme((curr) => (curr === "light" ? "dark" : "light"))} className={stlyes['toggle-background']}
-                style={currTheme === "light" ? { "color": "darkblue" } : { "color": 'antiquewhite' }} >
-                {currTheme === "light" ? "To the Dark" : "To the Light"}
+                style={currTheme === "light" ? { "color": "darkblue" } : { "color": "whitesmoke" }}>
+                {
+                    currTheme === "light" ?
+
+                        <>
+                            {"To the dark"} <FontAwesomeIcon icon={faMoon} />
+                        </>
+
+                        :
+                        <>
+                            {"To the light"} <FontAwesomeIcon icon={faSun} />
+                        </>
+
+                }
             </button>
         </>
     )
