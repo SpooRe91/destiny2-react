@@ -8,7 +8,7 @@ export const VideosCatalogue = ({ setVideoName }) => {
         <div className={styles["all-buttons-container"]}>
             <title>Videos</title>
             <button onClick={() => setVideoName("SpooRe's playlist")} className={styles["video-button-button"]}>
-                <Link to='/bgs/videos/v=OiiNBQ7hev8&list=PLh8Yxx5KxoxmkdHBUOnpSmG5-IISGM_OB&index=1&ab_channel=M.B.'
+                <Link to='/bgs/videos/v=OiiNBQ7hev8&list=PLh8Yxx5KxoxmkdHBUOnpSmG5-IISGM_OB&ab_channel=M.B.'
                     className={styles["video-button"]}>
                     SpooRe's playlist
                 </Link>
