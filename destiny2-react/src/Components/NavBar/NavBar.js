@@ -1,7 +1,16 @@
 
 // import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faVideo, faLink, faImage } from '@fortawesome/free-solid-svg-icons'
+import {
+    faHouse,
+    faVideo,
+    faLink,
+    faImage,
+    faNewspaper,
+    faCaretRight,
+    faCircleQuestion
+} from '@fortawesome/free-solid-svg-icons'
+
 import { NavLink } from 'react-router-dom';
 import styles from './NavBar.module.css';
 // import cryptoRandomString from 'crypto-random-string';
@@ -37,27 +46,27 @@ export const NavBar = () => {
         <>
             <ul className={styles["menu"]}>
                 <li>
-                    <NavLink to="/"><FontAwesomeIcon icon={faHouse} /> Home</NavLink>
+                    <NavLink to="/"><FontAwesomeIcon icon={faHouse} className={styles['nav-icon']} /> Home</NavLink>
                 </li>
-                <li>
-                    <NavLink to="#">Some Stuff</NavLink>
+                <li className={styles['rotate-arrow']}>
+                    <NavLink to="#" > <FontAwesomeIcon icon={faCaretRight} className={styles['rotate-arrow-1']} /> Some Stuff</NavLink>
                     <ul className={styles["submenu"]}>
-                        <li>
-                            <NavLink to=""><FontAwesomeIcon icon={faImage} /> Photos</NavLink>
+                        <li className={styles['hidden-li']}>
+                            <NavLink to="" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faImage} /> Photos</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/bgs/videos"><FontAwesomeIcon icon={faVideo} /> Videos</NavLink>
+                        <li className={styles['hidden-li']}>
+                            <NavLink to="/bgs/videos" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faVideo} /> Videos</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/bgs/links"><FontAwesomeIcon icon={faLink} /> Useful links</NavLink>
+                        <li className={styles['hidden-li']}>
+                            <NavLink to="/bgs/links" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faLink} /> Useful links</NavLink>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <NavLink to="/bgs/news">News</NavLink>
+                    <NavLink to="/bgs/news"><FontAwesomeIcon icon={faNewspaper} className={styles['nav-icon']} /> News</NavLink>
                 </li>
                 <li>
-                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer">About us & Join (redirects to Bungie.net)</a>
+                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCircleQuestion} className={styles['nav-icon']} /> About us & Join</a>
                 </li>
                 {/* {
                     !refreshToken
@@ -75,7 +84,7 @@ export const NavBar = () => {
                             <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer">{}</a>
                         </li>
                 } */}
-            </ul>
+            </ul >
         </>
     )
 }

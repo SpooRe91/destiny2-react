@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import stlyes from './ThemeChanger.module.css';
+import styles from './ThemeChanger.module.css';
 import darkTheme from "../../backgrounds/destiny2oldbulgarianstyleBGsdark.png"
 import lightTheme from "../../backgrounds/destiny2oldbulgarianstyleBGslight.jpg"
 
@@ -33,22 +33,24 @@ export const ThemeSwitcher = () => {
 
     return (
         <>
-            <button onClick={() => setCurrTheme((curr) => (curr === "light" ? "dark" : "light"))} className={stlyes['toggle-background']}
-                style={currTheme === "light" ? { "color": "darkblue" } : { "color": "whitesmoke" }}>
-                {
-                    currTheme === "light" ?
+            <div className={currTheme === "light" ? styles["slider-container-light"] : styles["slider-container-dark"]}>
 
-                        <>
-                            {"To the dark"} <FontAwesomeIcon icon={faMoon} />
-                        </>
+                <button onClick={() => setCurrTheme((curr) => (curr === "light" ? "dark" : "light"))}
+                    className={currTheme === "dark" ? styles['toggle-background-left'] : styles["toggle-background-right"]}
+                >
+                    {
+                        currTheme === "light" ?
+                            <>
+                                {"To the dark"} <FontAwesomeIcon icon={faMoon} />
+                            </>
 
-                        :
-                        <>
-                            {"To the light"} <FontAwesomeIcon icon={faSun} />
-                        </>
-
-                }
-            </button>
+                            :
+                            <>
+                                {"To the light"} <FontAwesomeIcon icon={faSun} />
+                            </>
+                    }
+                </button>
+            </div>
         </>
     )
 }
