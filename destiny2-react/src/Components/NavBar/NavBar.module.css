@@ -9,7 +9,7 @@
     position: fixed;
     top: 2%;
     width: 100%;
-    left: 28%;
+    left: 32%;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
@@ -121,4 +121,32 @@
 
 .menu>li:hover .submenu li:nth-child(odd) {
     transform: skewX(-25deg) translateX(-15px);
+}
+
+.rotate-arrow-1 {
+    color: white;
+    transition: 0.2s;
+    font-size: 1em;
+}
+
+.rotate-arrow:hover .rotate-arrow-1 {
+    transform: rotate(90deg);
+    transition: 0.1s;
+    color: rgb(0, 0, 0);
+}
+.menu>li:hover,
+.menu>li:hover .nav-icon,
+.menu>li>.hidden-nav-icon:hover {
+    color: black;
+    transition: 0.1s;
+}
+
+.menu>li:hover .rotate-arrow {
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
+}
+
+.hidden-li:hover .hidden-nav-icon{
+    color: black;
+    transition: 0.1s;
 }
