@@ -7,7 +7,7 @@
     border-radius: 10px;
     position: relative;
     right: 0%;
-    translate: 0px 0px;
+    transform: translate(0px, 0px);
 }
 
 .toggle-background-right {
@@ -19,7 +19,7 @@
     border-radius: 10px;
     position: relative;
     right: 0%;
-    translate: 100px 0px;
+    transform: translate(100px, 0px);
 }
 
 
