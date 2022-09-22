@@ -94,75 +94,244 @@ export const ClanMemberDetails = () => {
                             </a>
                             <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
                             <section>
-                                <article>
-                                    <h3>Raid Info:</h3>
-                                    <p>Activities done: <b>{characterStats?.raid.allTime.activitiesCleared.basic.value}</b></p>
-                                    <p>Total kills: <b>{characterStats?.raid.allTime.kills.basic.value}</b></p>
-                                    <p>Total precision kills: <b>{characterStats?.raid.allTime.precisionKills.basic.value}</b></p>
-                                    <p>Total deaths: <b>{characterStats?.raid.allTime.deaths.basic.value}</b></p>
-                                    <p>Total efficiency: <b>{characterStats?.raid.allTime.efficiency.basic.value.toFixed(2)}</b></p>
-                                    <p>Total fireteam activities done: <b>{characterStats?.raid.allTime.fireTeamActivities.basic.value}</b></p>
-                                    <p>Total orbs created: <b>{characterStats?.raid.allTime.orbsDropped.basic.value}</b></p>
-                                    <p>Total objectives completed: <b>{characterStats?.raid.allTime.objectivesCompleted.basic.value}</b></p>
-                                    <p>Total time played: <b>{characterStats?.raid.allTime.secondsPlayed.basic.displayValue}</b></p>
-                                    <p>Total time played (hours): <b>{(characterStats?.raid.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</b></p>
-                                </article>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><h3>Raid Info</h3></th>
+                                            <th className={styles["stats-th"]}>stats</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Activities done</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.activitiesCleared.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.kills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total precision kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.precisionKills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total deaths</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.deaths.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total efficiency</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.efficiency.basic.value.toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total fireteam activities done</td>
+                                            <td className={styles["name-td"]}><b className={styles["stats-td"]}>{characterStats?.raid.allTime.fireTeamActivities.basic.value}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total orbs created</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.orbsDropped.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total objectives completed</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.objectivesCompleted.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.raid.allTime.secondsPlayed.basic.displayValue}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played (hours)</td>
+                                            <td className={styles["stats-td"]}>{(characterStats?.raid.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </section>
                             <section>
-                                <article>
-                                    <h3>PVE Info:</h3>
-                                    <p>Activities done: <b>{characterStats?.allPvE.allTime.activitiesCleared.basic.value}</b></p>
-                                    <p>Total kills: <b>{characterStats?.allPvE.allTime.kills.basic.value}</b></p>
-                                    <p>Total precision kills: <b>{characterStats?.allPvE.allTime.precisionKills.basic.value}</b></p>
-                                    <p>Total deaths: <b>{characterStats?.allPvE.allTime.deaths.basic.value}</b></p>
-                                    <p>Total efficiency: <b>{characterStats?.allPvE.allTime.efficiency.basic.value.toFixed(2)}</b></p>
-                                    <p>Total fireteam activities done: <b>{characterStats?.allPvE.allTime.fireTeamActivities.basic.value}</b></p>
-                                    <p>Total orbs created: <b>{characterStats?.allPvE.allTime.orbsDropped.basic.value}</b></p>
-                                    <p>Total objectives completed: <b>{characterStats?.allPvE.allTime.objectivesCompleted.basic.value}</b></p>
-                                    <p>Total time played: <b>{characterStats?.allPvE.allTime.secondsPlayed.basic.displayValue}</b></p>
-                                    <p>Total time played (hours): <b>{(characterStats?.allPvE.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</b></p>
-                                </article>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><h3>PVE Info</h3></th>
+                                            <th className={styles["stats-th"]}>stats</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Activities done</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.activitiesCleared.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.kills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total precision kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.precisionKills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total deaths</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.deaths.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total efficiency</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.efficiency.basic.value.toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total fireteam activities done</td>
+                                            <td className={styles["name-td"]}><b className={styles["stats-td"]}>{characterStats?.allPvE.allTime.fireTeamActivities.basic.value}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total orbs created</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.orbsDropped.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total objectives completed</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.objectivesCompleted.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvE.allTime.secondsPlayed.basic.displayValue}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played (hours)</td>
+                                            <td className={styles["stats-td"]}>{(characterStats?.allPvE.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </section>
                             <section>
-                                <article>
-                                    <h3>PVP Info:</h3>
-                                    <p>Activities done: <b>{characterStats?.allPvE.allTime.activitiesCleared.basic.value}</b></p>
-                                    <p>Total kills: <b>{characterStats?.allPvP.allTime.kills.basic.value}</b></p>
-                                    <p>Total K/D: <b>{characterStats?.allPvP.allTime.killsDeathsRatio.basic.displayValue}</b></p>
-                                    <p>Total K/D/A: <b>{characterStats?.allPvP.allTime.killsDeathsAssists.basic.value.toFixed(2)}</b></p>
-                                    <p>Total precision kills: <b>{characterStats?.allPvP.allTime.precisionKills.basic.value}</b></p>
-                                    <p>Average precision kills per game: <b>{characterStats?.allPvP.allTime.precisionKills.pga.value.toFixed(2)}</b></p>
-                                    <p>Total longest kill distance: <b>{characterStats?.allPvP.allTime.longestKillDistance.basic.value} meters</b></p>
-                                    <p>Total deaths: <b>{characterStats?.allPvE.allTime.deaths.basic.value}</b></p>
-                                    <p>Total efficiency: <b>{characterStats?.allPvP.allTime.efficiency.basic.value.toFixed(2)}</b></p>
-                                    <p>Total time played: <b>{characterStats?.allPvP.allTime.secondsPlayed.basic.displayValue}</b></p>
-                                    <p>Win-loss ratio: <b>{characterStats?.allPvP.allTime.winLossRatio.basic.value.toFixed(2)}</b></p>
-                                    <p>Total time played (hours): <b>{(characterStats?.allPvP.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</b></p>
-                                </article>
-                                <hr />
-                                <article>
-                                    <h3>PVP weapon kills:</h3>
-                                    <p>Total <b style={{ "color": "coral" }}>handcannon</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsHandCannon.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>sniper rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsSniper.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>pulse rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsPulseRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>scout rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsScoutRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>auto rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsAutoRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>submachine gun</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsSubmachinegun.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>fusion rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsFusionRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>bow </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsBow.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>shotgun</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsShotgun.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>sidearm </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsSideArm.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>linear-fusion rifle </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsBeamRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>trance rifle</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsTraceRifle.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>galive </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsGlaive.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>machine gun </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsMachineGun.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>grenade launcher</b> kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsGrenadeLauncher.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>sword </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsSword.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>rocket launcher </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsRocketLauncher.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>super </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsSuper.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>grenade </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsGrenade.basic.value}</b></p>
-                                    <p>Total <b style={{ "color": "coral" }}>melee </b>kills: <b style={{ "color": "#0cc60c" }}>{characterStats?.allPvP.allTime.weaponKillsMelee.basic.value}</b></p>
-                                </article>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><h3>PVP Info</h3></th>
+                                            <th className={styles["stats-th"]}>stats</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.kills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total K/D</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.killsDeathsRatio.basic.displayValue}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total K/D/A</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.killsDeathsAssists.basic.value.toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total precision kills</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.precisionKills.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total deaths</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.deaths.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total efficiency</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.efficiency.basic.value.toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.secondsPlayed.basic.displayValue}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total time played (hours)</td>
+                                            <td className={styles["stats-td"]}>{(characterStats?.allPvP.allTime.secondsPlayed.basic.value / 60 / 60).toFixed(2)}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><h3>PVP Info - weapons info</h3></th>
+                                            <th className={styles["stats-th"]}>stats</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>handcannon</b> kills: </td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsHandCannon.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>sniper rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsSniper.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>pulse rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsPulseRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>scout rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsScoutRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>auto rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsAutoRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>submachine gun</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsSubmachinegun.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>fusion rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsFusionRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>bow </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsBow.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>shotgun</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsShotgun.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>sidearm </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsSideArm.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>linear-fusion rifle </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsBeamRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>trance rifle</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsTraceRifle.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>galive </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsGlaive.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>machine gun </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsMachineGun.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>grenade launcher</b> kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsGrenadeLauncher.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>sword </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsSword.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>rocket launcher </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsRocketLauncher.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>super </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsSuper.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>grenade </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsGrenade.basic.value}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className={styles["name-td"]}>otal <b style={{ "color": "coral" }}>melee </b>kills:</td>
+                                            <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsMelee.basic.value}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </section>
                         </>
                 }
