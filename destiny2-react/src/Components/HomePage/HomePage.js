@@ -124,6 +124,17 @@ export const HomePage = () => {
                                         <form className={styles["search"]} method="GET">
                                             {<input type="text" className={styles["input-field"]} placeholder="Guardian name..." name="search"
                                                 defaultValue={filterValue} onChange={filterHandler} />}
+                                            {
+                                                filterValue
+                                                    ?
+                                                    filtered?.length <= 0
+                                                        ?
+                                                        <p className={styles["form-search-error"]}>No clan members found!</p>
+                                                        :
+                                                        <p className={styles["form-search-confirmation"]}>{`Found ${filtered.length} clan members`}</p>
+                                                    :
+                                                    ""
+                                            }
                                         </form>
                                     </div>
                                 </>
