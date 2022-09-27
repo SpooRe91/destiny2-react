@@ -2,7 +2,6 @@ import { ClockLoader } from "react-spinners";
 
 import { useEffect, useState } from "react";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
-import { ScrollButton } from "../Common/ScrollButton";
 
 import styles from "./NewsPage.module.css"
 
@@ -39,10 +38,10 @@ export const NewsPage = () => {
     return (
         <>
             <title>News</title>
+            <h1>NEWS</h1>
             <div className={styles["newsContainer"]}>
                 {
                     <>
-                        <h1>NEWS</h1>
                         {isLoading
                             ?
                             <ClockLoader color="lightblue" size="50px" />
@@ -57,15 +56,18 @@ export const NewsPage = () => {
                                     ?
                                     news?.slice(0, 4).map(el => <NewsComponent key={el.identifier} data={el} />)
                                     :
-                                    [news?.map(el => <NewsComponent key={el.identifier} data={el} />),
-                                    window.scrollTo({ top: 800 })]
+                                    news?.map(el => <NewsComponent key={el.identifier} data={el} />)
                                 }
-                                <ScrollButton className={styles["news-button"]}/>
+
                             </>
                         }
                     </>
                 }
             </div>
+            {
+                toShowNews &&
+                <p className={styles["scroll-right"]}>Scroll right!</p>
+            }
         </>
     )
 }
