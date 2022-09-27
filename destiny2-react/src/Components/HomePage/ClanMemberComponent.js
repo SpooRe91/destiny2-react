@@ -7,8 +7,31 @@ export const ClanMemberComponent = ({ data }) => {
 
     return (
         <div className={styles["clan-member-element"]}>
-            {/* <div className={styles["info-container"]}> */}
+            <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
+                <img src={`https://www.bungie.net/${data?.bungieNetUserInfo.iconPath}`} alt="#" className={styles["player-avatar"]} />
+            </Link>
             <div className={styles["info-container"]}>
+                <p>
+                    Name: <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
+                        {data.memberType === 5 &&
+                            <strong style={{ "color": '#ff0000a1' }}>
+                                {data?.bungieNetUserInfo.displayName}
+                            </strong>
+                        }
+                        {
+                            data.memberType === 3 &&
+                            <strong style={{ "color": '#ff4400fa' }}>
+                                {data?.bungieNetUserInfo.displayName}
+                            </strong>
+                        }
+                        {
+                            data.memberType < 3 &&
+                            <strong style={{ "color": '#1bce09' }}>
+                                {data?.bungieNetUserInfo.displayName}
+                            </strong>
+                        }
+                    </Link>
+                </p>
                 <p>Title: {
                     data.memberType === 5 &&
                     <span style={{ "color": '#cf5b5b' }}>
@@ -34,35 +57,11 @@ export const ClanMemberComponent = ({ data }) => {
                         </span>
                     }
                 </p>
-                <p>
-                    Name: <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
-                        {data.memberType === 5 &&
-                            <strong style={{ "color": '#ff0000a1' }}>
-                                {data?.bungieNetUserInfo.displayName}
-                            </strong>
-                        }
-                        {
-                            data.memberType === 3 &&
-                            <strong style={{ "color": '#ff4400fa' }}>
-                                {data?.bungieNetUserInfo.displayName}
-                            </strong>
-                        }
-                        {
-                            data.memberType < 3 &&
-                            <strong style={{ "color": '#1bce09' }}>
-                                {data?.bungieNetUserInfo.displayName}
-                            </strong>
-                        }
-                    </Link>
-                </p>
+
                 <p className={styles["player-joined"]}>
                     Joined: <strong>{`${dateJoined.getDate()}/${dateJoined.getMonth() + 1}/${dateJoined.getFullYear()}`}</strong>
                 </p>
-                {/* </div> */}
 
-                <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
-                    <img src={`https://www.bungie.net/${data?.bungieNetUserInfo.iconPath}`} alt="#" className={styles["player-avatar"]} />
-                </Link>
                 <p>Link to Bungie.net - <a href={`https://www.bungie.net/7/en/User/Profile/${data.bungieNetUserInfo.membershipType}/${data.bungieNetUserInfo.membershipId}`}
                     target="_blank" rel="noreferrer" className={styles["player-name"]}>here</a></p>
                 <a href={`https://raid.report/pc/${data?.destinyUserInfo.membershipId}/`}
