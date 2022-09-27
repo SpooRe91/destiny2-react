@@ -27,43 +27,45 @@
 .clan-member-element {
     display: flex;
     background: #00000080;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(173,173,173,0.56);
     margin: 15px;
-    width: 300px;
+    width: 290px;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    box-shadow: inset 0px 10px 13px 0px rgb(173 173 173);
+    transform: scale3d(1, 1, 1);
+    overflow: hidden;
 }
 
 .clan-member-element:hover {
-    transform: translate3d(-7px, -10px, 0px);
+    transform: translate3d(0px, -10px, 0px);
     transition: 0.2s;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px #000000, 0px 0px 15px 0px #fd8700;
-    transform-style: preserve-3d;
+    box-shadow: 0px -10px 13px 0px rgb(173 173 173 / 56%);
 }
 
 .clan-member-element:not(:hover) {
-    transform: scale3d(1, 1, 1);
     transition: 0.2s;
-    border-radius: 5px;
+}
+
+.clan-member-element>p{
+    padding: 10px 15px;
 }
 
 .info-container {
     display: flex;
     background: rgba(84, 84, 84, 0.5);
     border: 2px solid #ffffff75;
-    border-radius: 5px;
-    margin: 0px 15px;
+    border-radius: 10px;
+    margin: 10px auto 0px;
     place-content: center;
     width: inherit;
     flex-wrap: wrap;
-    padding: 5px;
 }
 
 .info-container p {
-    padding-left: 5px;
-    margin: 1px;
+    padding: 5px;
 }
 
 .reports-container {
@@ -80,12 +82,12 @@
 }
 
 .player-name {
-    margin-top: 25px;
     font-size: 1.2em;
     text-decoration: none;
     white-space: pre-wrap;
     word-break: break-word;
     color: #c55b5b;
+    width: 100%;
 }
 
 .player-name:hover {
@@ -123,17 +125,15 @@
 }
 
 .player-avatar {
-    width: 230px;
+    width: inherit;
     height: 200px;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(173,173,173,0.56);
 }
 
 .player-avatar:hover {
     transition: 0.1s;
-    border-radius: 20px;
-    border: solid #c55b5b;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    box-shadow: 2px -1px 17px 0px rgb(255 0 0);
 }
 
 .player-avatar:not(:hover) {
