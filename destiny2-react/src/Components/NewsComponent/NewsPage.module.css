@@ -1,15 +1,16 @@
 .newsContainer {
     display: flex;
-    background: #0000007d;
+    background: #000000c4;
     margin: 5% auto;
     padding: 20px;
     max-height: 100%;
-    width: 40%;
-    flex-direction: column;
+    width: 100%;
+    min-width: 5rem;
+    flex-direction: row;
     align-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow: auto;
 }
 
 .news-element {
@@ -21,6 +22,7 @@ h1 {
     font-size: 1.7em;
     color: white;
     margin: auto;
+    margin-top: 5%;
     background: rgba(0, 0, 0, 0.808);
     padding: 10px;
     width: -moz-fit-content;
@@ -37,9 +39,11 @@ h1 {
     padding: 8px;
     border-radius: 10px;
     position: fixed;
-    bottom: 7%;
-    right: 10%;
+    bottom: 2rem;
+    right: 24rem;
     z-index: 11;
+    min-width: 1rem;
+
 }
 
 .news-button:hover {
@@ -56,4 +60,19 @@ h1 {
 
 .news-button:not(:hover) {
     transition: 0.1s;
+}
+
+.scroll-right {
+    color: coral;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: fixed;
+    bottom: 2rem;
+    right: 13rem;
+    background-color: rgba(122, 122, 95, 0.74);
+    border-radius: 10px;
+    padding: 5px;
 }
