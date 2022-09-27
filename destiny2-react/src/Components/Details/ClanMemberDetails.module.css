@@ -4,7 +4,7 @@
     align-content: center;
     justify-content: flex-end;
     padding: 10px;
-    width: 50%;
+    width: 100%;
     margin: 90px auto;
     border: 2px solid #bd5934;
     border-radius: 10px;
@@ -66,12 +66,20 @@
     margin: auto;
 }
 
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
 section {
+    display: inline-block;
     margin: 10px auto;
     border: 3px solid #7a7a5f;
     padding: 10px;
     border-radius: 10px;
     background-color: #4b4b47;
+    height: fit-content;
 }
 
 article {
@@ -121,13 +129,13 @@ hr {
 }
 
 table {
-    background-color: #7a7a5f;
+    background-color: #53533f;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
 th {
-    background-color: #7a7a5f;
+    background-color: #818181;
 }
 
 th,
@@ -139,13 +147,13 @@ td {
     padding: 5px;
 }
 
-.stats-td,
-.stats-th {
+
+.stats-td {
     text-align: left;
     line-height: 9mm;
     font-weight: bold;
     font-size: 1em;
-    color: rgb(230, 213, 191);
+    color: rgb(216, 122, 0);
 }
 
 .name-td {
@@ -153,5 +161,5 @@ td {
     line-height: 9mm;
     font-weight: bold;
     font-size: 1em;
-    color: rgb(0, 0, 0);
+    color:#ffffff;
 }
