@@ -28,9 +28,12 @@
     display: flex;
     background: #00000080;
     border-radius: 10px;
-    border: 1px solid rgba(173,173,173,0.56);
+    border: 1px solid rgba(173, 173, 173, 0.56);
     margin: 15px;
     width: 290px;
+    height: 500px;
+    max-height: 500px;
+    max-width: 290px;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,7 +52,7 @@
     transition: 0.2s;
 }
 
-.clan-member-element>p{
+.clan-member-element>p {
     padding: 10px 15px;
 }
 
@@ -126,8 +129,8 @@
 
 .player-avatar {
     width: inherit;
-    height: 200px;
-    border-bottom: 1px solid rgba(173,173,173,0.56);
+    height: 250px;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.56);
 }
 
 .player-avatar:hover {
