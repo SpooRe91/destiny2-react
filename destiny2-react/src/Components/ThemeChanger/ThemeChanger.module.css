@@ -26,21 +26,23 @@
 .slider-container-light {
     width: 223px;
     position: fixed;
-    left: 84.5%;
-    top: 3%;
+    right: 4rem;
+    top: 5.5rem;
     border-radius: 15px;
     border: solid #7a7a5f;
     background-color: #f5f5f57d;
+    z-index: 11;
 }
 
 .slider-container-dark {
     width: 223px;
     position: fixed;
-    left: 84.5%;
-    top: 3%;
+    right: 4rem;
+    top: 5.5rem;
     border-radius: 15px;
     border: solid #7a7a5f;
     background-color: #00008b5e;
+    z-index: 11;
 }
 
 .toggle-background-left:hover,
