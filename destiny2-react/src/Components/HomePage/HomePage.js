@@ -131,7 +131,11 @@ export const HomePage = () => {
                                                         ?
                                                         <p className={styles["form-search-error"]}>No clan members found!</p>
                                                         :
-                                                        <p className={styles["form-search-confirmation"]}>{`Found ${filtered.length} clan members`}</p>
+                                                        <p className={styles["form-search-confirmation"]}>Found {
+                                                            filtered.length === 1
+                                                                ? `${filtered.length} clan member`
+                                                                : `${filtered.length} clan members`}
+                                                        </p>
                                                     :
                                                     ""
                                             }
