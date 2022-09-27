@@ -235,6 +235,22 @@ form.search {
     transition: 0.5s;
 }
 
+.form-search-error {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.3mm;
+}
+
+.form-search-confirmation {
+    color: rgb(0, 255, 0);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.3mm;
+}
+
 .raid-report {
     font-size: 1em;
     background: #545454;
