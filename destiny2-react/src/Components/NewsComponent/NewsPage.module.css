@@ -33,17 +33,16 @@ h1 {
 }
 
 .news-button {
-    font-size: 1.2em;
     background: #545454e0;
     border: solid #7a7a5f;
-    padding: 8px;
     border-radius: 10px;
-    position: fixed;
-    bottom: 2rem;
-    right: 24rem;
-    z-index: 11;
+    bottom: 8rem;
+    font-size: 1.2em;
     min-width: 1rem;
-
+    padding: 8px;
+    position: fixed;
+    right: 54rem;
+    z-index: 11;
 }
 
 .news-button:hover {
@@ -70,8 +69,8 @@ h1 {
     width: -moz-fit-content;
     width: fit-content;
     position: fixed;
-    bottom: 2rem;
-    right: 13rem;
+    bottom: 13rem;
+    right: 55.5rem;
     background-color: rgba(122, 122, 95, 0.74);
     border-radius: 10px;
     padding: 5px;
