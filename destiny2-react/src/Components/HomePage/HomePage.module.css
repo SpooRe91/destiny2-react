@@ -166,28 +166,30 @@
 }
 
 .clan-member-sign {
-    background-image: linear-gradient(179deg, #c55b5b, #000000);
+    background-image: linear-gradient(271deg, #c55b5b, #000000);
     font-size: 1.7em;
-    border: solid #7a7a5f;
+    border: 1px solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
     text-align: center;
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
     margin: 10px auto;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
 .clan-member-search-sign {
-    background-image: linear-gradient(179deg, #998f8f, #000000);
+    background-image: linear-gradient(180deg, #998f8f, #000000);
     font-size: 1.3em;
-    border: solid #7a7a5f;
+    border: 1.3px solid #7a7a5f;
     padding: 8px;
     border-radius: 10px;
     z-index: 10;
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
     margin: 10px auto;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
