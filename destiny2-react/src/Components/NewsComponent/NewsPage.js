@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
 
 import styles from "./NewsPage.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLeftRight } from "@fortawesome/free-solid-svg-icons";
 
 export const NewsPage = () => {
 
@@ -66,7 +68,7 @@ export const NewsPage = () => {
             </div>
             {
                 toShowNews &&
-                <p className={styles["scroll-right"]}>Scroll right!</p>
+                <p className={styles["scroll-right"]}>Scroll <FontAwesomeIcon icon={faLeftRight} className={styles['nav-icon']} /></p>
             }
         </>
     )
