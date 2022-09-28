@@ -10,12 +10,24 @@
     align-content: center;
     align-items: center;
     justify-content: flex-start;
-    overflow: auto;
 }
 
 .news-element {
     margin: 20px;
     width: 100%;
+}
+
+.title-anchor {
+    font-size: 20px;
+}
+
+.image-anchor {
+    font-size: 13.8em;
+}
+
+section {
+    width: fit-content;
+    height: auto;
 }
 
 h1 {
@@ -36,12 +48,12 @@ h1 {
     background: #545454e0;
     border: solid #7a7a5f;
     border-radius: 10px;
-    bottom: 8rem;
+    bottom: 2.4rem;
+    right: 10rem;
     font-size: 1.2em;
     min-width: 1rem;
     padding: 8px;
     position: fixed;
-    right: 54rem;
     z-index: 11;
 }
 
@@ -74,4 +86,24 @@ h1 {
     background-color: rgba(122, 122, 95, 0.74);
     border-radius: 10px;
     padding: 5px;
+}
+
+.carousel-short {
+    width: 70%;
+    margin: 15px auto;
+    height: 380px;
+    border-radius: 10px;
+}
+
+.clock-loader {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    width: 80px;
+    margin: auto;
+    border-radius: 50%;
 }

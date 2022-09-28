@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
 
 import styles from "./NewsPage.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLeftRight } from "@fortawesome/free-solid-svg-icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 export const NewsPage = () => {
 
     const [news, setNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [toShowNews, setToShowNews] = useState(false);
+    // const [toShowNews, setToShowNews] = useState(false);
 
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
@@ -41,34 +41,28 @@ export const NewsPage = () => {
         <>
             <title>News</title>
             <h1>NEWS</h1>
-            <div className={styles["newsContainer"]}>
-                {
-                    <>
-                        {isLoading
-                            ?
-                            <ClockLoader color="lightblue" size="50px" />
-                            :
-                            <>
-                                <button onClick={() => setToShowNews(state => !state)} className={styles["news-button"]}
+            {isLoading
+                ?
+                <div className={styles["clock-loader"]}>
+                    <ClockLoader color="lightblue" size="80px" />
+                </div>
+                :
+                <div className={styles["newsContainer"]}>
+                    {
+                        <>
+                            {/* <button onClick={() => setToShowNews(state => !state)} className={styles["news-button"]}
                                     style={toShowNews ? { 'color': 'coral' } : { 'color': 'whitesmoke' }}>
                                     {toShowNews ? 'Show latest news' : 'Show ALL Bungie.net news'}
-                                </button>
-
-                                {!toShowNews
-                                    ?
-                                    news?.slice(0, 4).map(el => <NewsComponent key={el.identifier} data={el} />)
-                                    :
+                                </button> */}
+                            <Carousel className={styles["carousel-short"]} emulateTouch={true}
+                                useKeyboardArrows={true} autoFocus={true} autoPlay={true} infiniteLoop={true} showThumbs={false}>
+                                {
                                     news?.map(el => <NewsComponent key={el.identifier} data={el} />)
                                 }
-
-                            </>
-                        }
-                    </>
-                }
-            </div>
-            {
-                toShowNews &&
-                <p className={styles["scroll-right"]}>Scroll <FontAwesomeIcon icon={faLeftRight} className={styles['nav-icon']} /></p>
+                            </Carousel>
+                        </>
+                    }
+                </div>
             }
         </>
     )
