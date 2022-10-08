@@ -24,13 +24,13 @@ export const NewsPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.Response?.categories[1].entries.results.length > 0) {
-                    setNews(data.Response?.categories[1].entries.results);
-                    setIsLoading(state => false);
-                } else {
+                if (data.Response?.categories[1].entries.results.length <= 0) {
                     setIsLoading(state => true);
-                    throw new Error('Unable to fetch news, please try again later!')
+                    throw new Error('Unable to fetch news, please try again later!');
                 }
+                setNews(data.Response?.categories[1].entries.results);
+                setIsLoading(state => false);
+
             }).catch(error => {
                 alert(error);
             });
