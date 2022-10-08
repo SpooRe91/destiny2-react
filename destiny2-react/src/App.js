@@ -22,7 +22,6 @@ function App() {
 
   const [videoName, setVideoName] = useState('');
 
-
   return (
     <div className="App">
       <NavBar />
