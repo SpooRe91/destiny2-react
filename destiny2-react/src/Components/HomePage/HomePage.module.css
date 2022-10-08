@@ -5,7 +5,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 25px;
 }
 
 .home-container {
@@ -144,11 +144,12 @@
 }
 
 .clan-info {
+    background-image: url('../../backgrounds/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style.png');
     font-size: 1.1em;
-    color: white;
+
     margin: 10px auto;
-    background: rgba(0, 0, 0, 0.808);
-    padding: 10px;
+    /* background: rgba(0, 0, 0, 0.808); */
+    /* padding: 10px; */
     text-align: -webkit-center;
     width: -moz-fit-content;
     width: 100%;
@@ -163,6 +164,18 @@
     align-items: center;
     overflow: auto;
     white-space: pre-wrap;
+}
+
+.clan-info-article{
+    font-size: 1.06em;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    text-shadow: -1px 1px 0px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin: 0;
 }
 
 .clan-member-sign {
@@ -254,6 +267,7 @@ form.search {
 }
 
 .raid-report {
+    text-shadow: -1px 2px 1px black;
     font-size: 1em;
     background: #545454;
     border: solid #7a7a5f;
@@ -268,10 +282,9 @@ form.search {
 .raid-report:hover {
     cursor: pointer;
     color: rgb(0, 0, 0);
-    text-shadow: 0px 0px 20px white;
+    box-shadow: 0px 0px 20px white;
     border-radius: 15px;
     transition: 0.1s;
-    text-decoration: underline;
 }
 
 .raid-report:active {
@@ -301,12 +314,15 @@ form.search {
     max-width: 600px;
     border: 1px solid #b15403a1;
     border-radius: 10px;
+    text-shadow: -1px 2px 1px coral;
 }
 
 .welcome-h1>p {
     font-size: 0.7em;
+    text-shadow: -1px 2px 1px black;
 }
 
 .clan-info>h4 {
     text-transform: uppercase;
+    text-shadow: -1px 2px 1px black;
 }
