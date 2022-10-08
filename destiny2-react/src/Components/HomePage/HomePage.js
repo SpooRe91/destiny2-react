@@ -92,7 +92,7 @@ export const HomePage = () => {
                                 <h4>{clanData?.motto}</h4>
                                 <h4>Callsign: {clanData?.clanInfo.clanCallsign}</h4>
                                 <div>
-                                    <article>
+                                    <article className={styles["clan-info-article"]}>
                                         {clanData?.about}
                                     </article>
                                 </div>
