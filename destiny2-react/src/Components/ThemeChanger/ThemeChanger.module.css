@@ -31,6 +31,8 @@
     border-radius: 15px;
     border: solid #7a7a5f;
     background-color: #f5f5f57d;
+    transition: 3s;
+    box-shadow: 0px 0px 10px black, -3px 3px 40px 10px rgba(245, 245, 245, 0.623);
     z-index: 11;
 }
 
@@ -42,6 +44,8 @@
     border-radius: 15px;
     border: solid #7a7a5f;
     background-color: #00008b5e;
+    box-shadow: 0px 0px 10px black, -3px 3px 40px 10px rgba(0, 0, 139, 0.733);
+    transition: 3s;
     z-index: 11;
 }
 
