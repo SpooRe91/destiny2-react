@@ -25,6 +25,7 @@
 }
 
 .clan-member-element {
+    position: relative;
     display: flex;
     background: #00000080;
     border-radius: 10px;
@@ -85,6 +86,7 @@
 }
 
 .player-name {
+    position: relative;
     font-size: 1.2em;
     text-decoration: none;
     white-space: pre-wrap;
@@ -133,14 +135,39 @@
     border-bottom: 1px solid rgba(173, 173, 173, 0.56);
 }
 
-.player-avatar:hover {
-    transition: 0.1s;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    box-shadow: 2px -1px 17px 0px rgb(255 0 0);
+.bar::before,
+.bar::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 5px;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    transition: 300ms ease-in-out;
 }
 
-.player-avatar:not(:hover) {
-    transition: 0.1s;
+.bar::before {
+    left: 0%
+}
+
+.bar::after {
+    right: 0%
+}
+
+.player-avatar:hover+.bar::before{
+    background: rgb(255 0 0);
+    box-shadow: 0px -7px 17px 2px rgb(255 0 0);
+    width: 100%;
+}
+.player-avatar:hover+.bar::after {
+    background: rgb(255 0 0);
+    box-shadow: 0px -7px 17px 2px rgb(255 0 0);
+    width: 100%;
+}
+
+.player-avatar:not(:hover)+.bar::before,
+.player-avatar:not(:hover)+.bar::after {
+    box-shadow: none;
 }
 
 .clan-info {
@@ -166,7 +193,7 @@
     white-space: pre-wrap;
 }
 
-.clan-info-article{
+.clan-info-article {
     font-size: 1.06em;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.555);
