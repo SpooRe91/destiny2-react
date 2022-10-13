@@ -5,10 +5,13 @@ export const ClanMemberComponent = ({ data }) => {
     const dateJoined = new Date(data?.joinDate);
     const id = (data?.bungieNetUserInfo.membershipId);
 
+
     return (
         <div className={styles["clan-member-element"]}>
             <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
                 <img src={`https://www.bungie.net/${data?.bungieNetUserInfo.iconPath}`} alt="#" className={styles["player-avatar"]} />
+                <span className={styles['bar']}>
+                </span>
             </Link>
             <div className={styles["info-container"]}>
                 <p>
