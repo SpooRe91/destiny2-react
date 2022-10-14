@@ -46,7 +46,6 @@ export const ClanMemberDetails = () => {
         }
     }, [clanMembersInfo])
 
-    console.log(characterStats);
     return (
         <div>
             <title>Details {clanMembersInfo?.bungieNetUserInfo.displayName}</title>
@@ -93,19 +92,19 @@ export const ClanMemberDetails = () => {
                             </a>
                             <div className={styles["buttons-container"]}>
                             <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
-                                <a href={`https://raid.report/pc/${id}/`}
+                                <a href={`https://raid.report/pc/${clanMembersInfo?.destinyUserInfo.membershipId}/`}
                                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#4db6ac" }}>
                                     Raid report
                                 </a>
-                                <a href={`https://dungeon.report/pc/${id}/`}
+                                <a href={`https://dungeon.report/pc/${clanMembersInfo?.destinyUserInfo.membershipId}/`}
                                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#03a9f4" }}>
                                     Dungeon report
                                 </a>
-                                <a href={`https://destinytrialsreport.com/report/3/${id}/`}
+                                <a href={`https://destinytrialsreport.com/report/3/${clanMembersInfo?.destinyUserInfo.membershipId}/`}
                                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#dc5062" }}>
                                     Trials report
                                 </a>
-                                <a href={`https://crucible.report/report/3/${id}/`}
+                                <a href={`https://crucible.report/report/3/${clanMembersInfo?.destinyUserInfo.membershipId}/`}
                                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#ea1430" }}>
                                     Crucible report
                                 </a>
