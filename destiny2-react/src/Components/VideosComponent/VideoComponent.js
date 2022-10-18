@@ -16,8 +16,8 @@ export const VideoComponent = ({ videoName }) => {
                 <button onClick={() => navigate(-1)} className={styles["back-button"]}><FontAwesomeIcon icon={faArrowLeft} /> Back</button>
             </div>
             <div className={styles["single-video-container"]}>
-                <iframe name="spoore"
-                    src={`https://www.youtube.com/embed/watch?${id}?autoplay=0`} title="spoore">
+                <iframe
+                    src={`https://www.youtube.com/embed/watch?${id}?autoplay=0`} title="#" loading="lazy">
                 </iframe>
             </div>
         </div>

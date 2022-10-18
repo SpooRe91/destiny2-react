@@ -12,16 +12,16 @@ export const UsefulLinks = () => {
             <title>Useful links</title>
             <div className={styles["link-container"]}>
 
-                <iframe src="https://raid.report/" title="raid-report">
+                <iframe src="https://raid.report/" title="raid-report" loading="lazy">
                     Raid report
                 </iframe>
-                <iframe src="https://dungeon.report/" title="dungeon-report">
+                <iframe src="https://dungeon.report/" title="dungeon-report" loading="lazy">
                     Dungeon report
                 </iframe>
-                <iframe src="https://trials.report/" title="trials-report">
+                <iframe src="https://trials.report/" title="trials-report" loading="lazy">
                     Trials report
                 </iframe>
-                <iframe src="https://bray.tech/" title="braytech">
+                <iframe src="https://bray.tech/" title="braytech" loading="lazy">
                     Braytech
                 </iframe>
             </div>
