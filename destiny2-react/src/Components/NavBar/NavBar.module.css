@@ -124,6 +124,7 @@
 }
 
 .rotate-arrow-1 {
+    transition: 300ms;
     color: white;
     transition: 0.2s;
     font-size: 1em;
@@ -131,9 +132,10 @@
 
 .rotate-arrow:hover .rotate-arrow-1 {
     transform: rotate(90deg);
-    transition: 0.1s;
+
     color: rgb(0, 0, 0);
 }
+
 .menu>li:hover,
 .menu>li:hover .nav-icon,
 .menu>li>.hidden-nav-icon:hover {
