@@ -33,7 +33,7 @@
     cursor: pointer;
     color: #000000;
     text-shadow: #ffffff 0px 0px 10px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer p {
@@ -54,5 +54,5 @@
     cursor: pointer;
     color: #000000;
     text-shadow: #ffffff 0px 0px 10px;
-    text-decoration: underline;
+    text-decoration: none;
 }
