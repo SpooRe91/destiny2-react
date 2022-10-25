@@ -4,9 +4,8 @@ export const Footer = () => {
 
     return (
         <footer className={styles["footer"]}>
-            <p> Designed by
-                <a href="https://github.com/SpooRe91" target={"_blank"} rel="noreferrer"
-                    className={styles["btn-footer-created-by"]}>Martin Bogdanov</a> © </p>
+            <p> Designed by <a href="https://github.com/SpooRe91" target={"_blank"} rel="noreferrer"
+                className={styles["btn-footer-created-by"]}>Martin Bogdanov</a> © </p>
 
             <a href="https://www.bungie.net/en/ClanV2?groupid=4131725" className={styles["btn-footer"]}
                 name="about" target={"_blank"} rel="noreferrer">Our clan</a>
