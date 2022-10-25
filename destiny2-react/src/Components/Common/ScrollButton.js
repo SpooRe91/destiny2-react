@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
+import styles from "./Common.module.css"
 
 //-------------------------------------------------------------------------------------------------
 export const ScrollButton = () => {
@@ -24,7 +25,7 @@ export const ScrollButton = () => {
     window.addEventListener('scroll', toggleVisible);
     //-------------------------------------------------------------------------------------------------
     return (
-        <FaArrowCircleUp onClick={scrollToTop} className={"to-top"}
+        <FaArrowCircleUp onClick={scrollToTop} className={styles["to-top"]}
             style={{ display: visible ? 'inline' : 'none' }} title="To top" />
     );
 }
