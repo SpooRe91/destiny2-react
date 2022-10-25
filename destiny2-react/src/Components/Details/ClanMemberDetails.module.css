@@ -67,19 +67,20 @@
 }
 
 .section-container {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px auto;
+    gap: 15px;
 }
 
 section {
-    display: inline-block;
-    margin: 10px auto;
-    border: 3px solid #7a7a5f;
-    padding: 10px;
-    border-radius: 10px;
     background-color: #4b4b47;
+    border: 3px solid #7a7a5f;
+    border-radius: 10px;
+    display: inline-block;
     height: fit-content;
+    padding: 10px;
 }
 
 article {

@@ -57,6 +57,34 @@
     text-decoration: none;
 }
 
+.to-top {
+    color: coral;
+    z-index: 99;
+    font-size: 51px;
+    background: #545454e0;
+    border: solid #7a7a5f;
+    padding: 8px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 6.8%;
+    right: 4%;
+}
+
+.to-top:active {
+    color: white;
+}
+
+.to-top:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 20px white;
+    border-radius: 15px;
+    transition: 0.1s;
+}
+
+.to-top:not(:hover) {
+    transition: 0.1s;
+}
+
 @media screen and (max-width:425px) {
 
     .footer {
