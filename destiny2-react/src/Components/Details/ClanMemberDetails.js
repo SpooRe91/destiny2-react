@@ -91,7 +91,7 @@ export const ClanMemberDetails = () => {
                                 <img src={`https://www.bungie.net/${clanMembersInfo?.bungieNetUserInfo.iconPath}`} alt="#" className={styles["player-avatar"]} />
                             </a>
                             <div className={styles["buttons-container"]}>
-                            <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
+                                <button onClick={() => navigate(-1)} className={styles["video-button"]}>Back</button>
                                 <a href={`https://raid.report/pc/${clanMembersInfo?.destinyUserInfo.membershipId}/`}
                                     target="_blank" rel="noreferrer" className={styles["raid-report"]} style={{ "color": "#4db6ac" }}>
                                     Raid report
