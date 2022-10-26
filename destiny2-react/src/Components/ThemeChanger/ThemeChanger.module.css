@@ -62,7 +62,7 @@
     transition: 0.1s;
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:600px) {
 
     .slider-container-dark {
         width: 190px;
