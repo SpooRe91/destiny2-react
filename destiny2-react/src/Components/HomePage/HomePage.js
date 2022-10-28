@@ -62,7 +62,7 @@ export const HomePage = () => {
     const sortedAdmins = clanMembers?.filter(a => a.memberType >= 3);
     const sortedMembers = clanMembers?.filter(a => a.memberType < 3)
         .sort((a, b) => a.bungieNetUserInfo.displayName.localeCompare(b.bungieNetUserInfo.displayName));
-    console.log(sortedAdmins);
+    // console.log(sortedAdmins);
     // User.UserInfoCard
 
     return (
