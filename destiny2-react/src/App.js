@@ -12,6 +12,7 @@ import { VideoComponent } from './Components/VideosComponent/VideoComponent';
 import { useState } from 'react';
 import { ClanMemberDetails } from './Components/Details/ClanMemberDetails';
 import { Footer } from './Components/Common/Footer';
+import { PhotosComponent } from './Components/PhotosCopmonent/PhotosComponent';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/bgs/news' element={<NewsPage />} />
         <Route path='/bgs/links' element={<UsefulLinks />} />
+        <Route path='/bgs/photos' element={<PhotosComponent />} />
         <Route path='/bgs/videos' element={<VideosCatalogue setVideoName={setVideoName} />} />
         <Route path='/bgs/videos/:id' element={<VideoComponent videoName={videoName} />} />
         <Route path='/bgs/details/:id' element={<ClanMemberDetails />} />
