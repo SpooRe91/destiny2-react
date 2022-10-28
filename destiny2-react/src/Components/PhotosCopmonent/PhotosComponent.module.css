@@ -1,0 +1,125 @@
+.photos-container {
+    position: relative;
+    width: 100%;
+    background: none;
+    display: flex;
+    border: none;
+    margin: 10% auto;
+    height: 25rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.notice {
+    border-top: 1px solid coral;
+    border-left: 1px solid coral;
+    border-right: 1px solid coral;
+    border-left: 1px solid coral;
+    border-bottom: none;
+    font-size: 3rem;
+    color: red;
+    text-shadow: 0px 1px 5px white;
+    margin: unset;
+    line-height: 1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    object-fit: cover
+}
+
+.wrapper p {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.808);
+    color: white;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid coral;
+    border-right: 1px solid coral;
+    border-bottom: 1px solid coral;
+}
+
+.additional-info p:before {
+    content: '';
+    border-bottom: 1px solid coral;
+    position: absolute;
+    bottom: 205.7px;
+    left: 697px;
+    width: 28px;
+    transform: translate(-50%, -50%);
+    height: 12px;
+    border-bottom-left-radius: 10px;
+}
+
+.additional-info p:after {
+    content: '';
+    border-bottom: 1px solid coral;
+    position: absolute;
+    bottom: 205.7px;
+    left: 1223px;
+    width: 28px;
+    transform: translate(-50%, -50%);
+    border-bottom-right-radius: 10px;
+    height: 12px;
+}
+
+@media screen and (max-width:600px) {
+    .photos-container {
+        position: relative;
+        width: 90%;
+        background: none;
+        display: flex;
+        border: none;
+        margin: auto;
+        height: 25rem;
+        flex-direction: unset;
+        flex-wrap: wrap;
+        padding: unset;
+        align-content: center;
+    }
+
+    .photos-container div {
+        text-align: center;
+        width: 100%;
+        border: 1px solid coral;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .notice {
+        border-top: unset;
+        border-right: unset;
+        border-left: unset;
+        border-bottom: none;
+        font-size: 1.5rem;
+        color: red;
+        text-shadow: 0px 1px 5px white;
+        margin: unset;
+        line-height: 1;
+        border-top-left-radius: unset;
+        border-top-right-radius: unset;
+        width: 100%;
+        border-radius: unset;
+    }
+
+    .wrapper p {
+        background: rgba(0, 0, 0, 0.808);
+        color: white;
+        padding: 15px;
+        border-bottom-left-radius: unset;
+        border-bottom-right-radius: unset;
+        border-left: unset;
+        border-right: unset;
+        border-bottom: unset;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+
+}
