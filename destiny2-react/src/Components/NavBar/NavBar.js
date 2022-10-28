@@ -52,7 +52,7 @@ export const NavBar = () => {
                     <NavLink to="#" > <FontAwesomeIcon icon={faCaretRight} className={styles['rotate-arrow-1']} /> Some Stuff</NavLink>
                     <ul className={styles["submenu"]}>
                         <li className={styles['hidden-li']}>
-                            <NavLink to="" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faImage} /> Photos</NavLink>
+                            <NavLink to="/bgs/photos" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faImage} /> Photos</NavLink>
                         </li>
                         <li className={styles['hidden-li']}>
                             <NavLink to="/bgs/videos" className={styles['hidden-nav-icon']}><FontAwesomeIcon icon={faVideo} /> Videos</NavLink>
