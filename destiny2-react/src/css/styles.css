@@ -19,8 +19,6 @@ html {
         scroll-behavior: smooth;
         overflow-x: hidden;
         overflow-y: scroll;
-        overflow-y: overlay;
-        overflow-x: overlay;
         min-width: 320px;
     }
 }
