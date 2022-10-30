@@ -100,7 +100,7 @@
         font-size: 14px;
         background: #545454;
         border: 1px solid #7a7a5f;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
     }
