@@ -56,6 +56,12 @@ export const HomePage = () => {
         setFilterValue(e.target.value.toLowerCase().trim());
     };
 
+    const scrollHandler = () => {
+        if (!toShowMembers) {
+            setTimeout(() => { window.scroll({ top: 800, behavior: 'auto' }) })
+        }
+    }
+
 
     const filtered = clanMembers?.filter(x => x.bungieNetUserInfo.displayName.toLowerCase().includes(filterValue));
     const creation = new Date(clanData?.creationDate);
@@ -99,7 +105,7 @@ export const HomePage = () => {
                             </div>
                             <div>
                                 <button className={styles["showMembers"]}
-                                    onClick={() => [setToShowMembers(state => !state), window.scroll({ top: 800, behavior: 'auto' })]}
+                                    onClick={() => [setToShowMembers(state => !state), scrollHandler()]}
                                     style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
                                 >
                                     {
@@ -117,6 +123,7 @@ export const HomePage = () => {
                             </div>
 
                             {toShowMembers &&
+
                                 <>
                                     <h1 className={styles["clan-member-sign"]}>CLAN MEMBERS</h1>
                                     <div>
