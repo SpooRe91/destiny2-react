@@ -62,7 +62,7 @@
     transition: 0.1s;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:678px) {
 
     .toggle-background-left {
         font-size: 0.8em;
