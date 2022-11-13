@@ -17,7 +17,6 @@ export const ClanMemberDetails = () => {
     useEffect(() => {
         getClanMembers()
             .then(data => {
-                console.log(data);
                 if (data.Response !== null
                     && data.Response !== undefined) {
                     setClanMemberInfo(state =>
