@@ -6,10 +6,11 @@
 }
 
 .menu {
+    left: 50%;
     position: fixed;
+    transform: translate(-50%, 0);
     top: 2%;
     width: 100%;
-    left: 32%;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
