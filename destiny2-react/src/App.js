@@ -18,7 +18,7 @@ import { PhotosComponent } from './Components/PhotosCopmonent/PhotosComponent';
 function App() {
 
   useEffect(() => {
-    document.body.style.backgroundImage = (sessionStorage.getItem('theme'));
+    document.querySelector('html').style.backgroundImage = (sessionStorage.getItem('theme'));
   }, []);
 
   const [videoName, setVideoName] = useState('');
