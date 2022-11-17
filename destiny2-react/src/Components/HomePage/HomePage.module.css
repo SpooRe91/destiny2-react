@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: 95%;
+    width: 100%;
     margin: 80px auto;
     border-radius: 10px;
     border: 1px solid coral;
@@ -70,6 +70,21 @@
 
 .info-container p {
     padding: 5px;
+    padding: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .reports-container {
@@ -89,7 +104,7 @@
     position: relative;
     font-size: 1.2em;
     text-decoration: none;
-    white-space: pre-wrap;
+    white-space: nowrap;
     word-break: break-word;
     color: #c55b5b;
     width: 100%;
@@ -154,11 +169,12 @@
     right: 0%
 }
 
-.player-avatar:hover+.bar::before{
+.player-avatar:hover+.bar::before {
     background: rgb(255 0 0);
     box-shadow: 0px -7px 17px 2px rgb(255 0 0);
     width: 100%;
 }
+
 .player-avatar:hover+.bar::after {
     background: rgb(255 0 0);
     box-shadow: 0px -7px 17px 2px rgb(255 0 0);
@@ -173,7 +189,6 @@
 .clan-info {
     background-image: url('../../backgrounds/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style.png');
     font-size: 1.1em;
-
     margin: 10px auto;
     /* background: rgba(0, 0, 0, 0.808); */
     /* padding: 10px; */
@@ -351,4 +366,100 @@ form.search {
 .clan-info>h4 {
     text-transform: uppercase;
     text-shadow: -1px 2px 1px black;
+}
+
+@media screen and (max-width:678px) {
+
+    .clan-member-container {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .clan-member-element {
+        position: relative;
+        display: flex;
+        background: #00000080;
+        border-radius: 10px;
+        border: 1px solid rgba(173, 173, 173, 0.56);
+        margin: unset;
+        width: 100%;
+        height: unset;
+        max-height: unset;
+        max-width: unset;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-shadow: inset 0px 10px 13px 0px rgb(173 173 173);
+        transform: scale3d(1, 1, 1);
+        overflow: hidden;
+    }
+
+    .info-container {
+        display: flex;
+        background: rgba(84, 84, 84, 0.5);
+        border: 2px solid #ffffff75;
+        border-radius: 10px;
+        margin: unset;
+        place-content: center;
+        width: inherit;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .data-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 10px;
+        width: fit-content;
+        align-items: center;
+    }
+
+    .data-container p {
+        width: fit-content;
+        padding: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 30ch;
+    }
+
+    .data-container a {
+        position: relative;
+        font-size: 1.2rem;
+        text-decoration: none;
+        white-space: nowrap;
+        word-break: break-word;
+        color: #c55b5b;
+        width: fit-content;
+    }
+
+    .data-container a img {
+        width: 115px;
+        height: 115px;
+        border-bottom: 1px solid rgba(173, 173, 173, 0.56);
+        border-radius: 10px;
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .player-name {
+        position: relative;
+        font-size: 1.2em;
+        text-decoration: none;
+        white-space: nowrap;
+        word-break: break-word;
+        color: #c55b5b;
+        width: 100%;
+    }
+
 }
