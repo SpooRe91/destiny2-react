@@ -28,7 +28,7 @@ export const ThemeSwitcher = () => {
             localStorage.setItem('mode', 'light');
         }
 
-        document.body.style.backgroundImage = (localStorage.getItem('theme'));
+        document.querySelector('html').style.backgroundImage = (localStorage.getItem('theme'));
     }, [currTheme])
 
     return (
