@@ -167,7 +167,7 @@ td {
 
 .buttons-container {
     position: absolute;
-    top: 17.5%;
+    top: 22rem;
 }
 
 .raid-report {
@@ -233,7 +233,7 @@ td {
 
     .buttons-container {
         position: absolute;
-        top: 18.4%;
+        top: 24rem;
         display: flex;
         gap: 5px;
         align-items: center;
