@@ -1,5 +1,12 @@
 html {
     box-sizing: border-box;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
 }
 
 
@@ -120,14 +127,15 @@ img {
     width: 300px;
 }
 
-.music-div {
-    text-align: center;
-    align-items: center;
-    color: coral;
-    font-weight: bold;
-    position: absolute;
-    top: 1.5%;
-    right: 10%;
-    width: 200px;
-    display: block;
+@media screen and (max-width:678px) {
+    html {
+        box-sizing: border-box;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-attachment: fixed;
+    }
 }
