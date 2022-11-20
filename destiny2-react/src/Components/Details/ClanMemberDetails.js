@@ -55,7 +55,7 @@ export const ClanMemberDetails = () => {
                         <ClockLoader color="coral" size="75px" />
                         :
                         <>
-                            <div className="main-info">
+                            <div className={styles["main-info"]}>
 
                                 <a href={`https://www.bungie.net/7/en/User/Profile/254/${id}`}
                                     target="_blank" rel="noreferrer" className={styles["profile-name"]}>
@@ -119,7 +119,8 @@ export const ClanMemberDetails = () => {
                                         <ClockLoader color="coral" size="75px" margin="0px auto" />
                                         :
                                         <>
-                                            <section>
+                                            <section className={styles["raid-section"]}>
+                                                <div className={styles["black-r"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -171,7 +172,8 @@ export const ClanMemberDetails = () => {
                                                     </tbody>
                                                 </table>
                                             </section>
-                                            <section>
+                                            <section className={styles["pve-section"]}>
+                                            <div className={styles["black-pve"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -223,7 +225,8 @@ export const ClanMemberDetails = () => {
                                                     </tbody>
                                                 </table>
                                             </section>
-                                            <section>
+                                            <section className={styles["pvp-section"]}>
+                                            <div className={styles["black-pvp"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -267,7 +270,8 @@ export const ClanMemberDetails = () => {
                                                     </tbody>
                                                 </table>
                                             </section>
-                                            <section>
+                                            <section className={styles["weapons-section"]}>
+                                            <div className={styles["black-wep"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>

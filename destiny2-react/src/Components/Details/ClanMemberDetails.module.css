@@ -14,6 +14,13 @@
     position: relative;
 }
 
+.main-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .profile-name {
     margin-top: 20px;
     font-size: 1.5em;
@@ -40,6 +47,7 @@
     border-radius: 10px;
     text-decoration: none;
     word-break: break-word;
+    display: inline-block;
 }
 
 
@@ -130,9 +138,10 @@ hr {
 }
 
 table {
-    background-color: #53533f;
+    background-color: transparent;
     border-radius: 10px;
     margin-bottom: 15px;
+    z-index: 100;
 }
 
 th {
@@ -174,7 +183,7 @@ td {
     text-shadow: -1px 2px 1px black;
     font-size: 1em;
     background: #545454;
-    border: solid #7a7a5f;
+    border: 1px solid #7a7a5f;
     padding: 8px;
     margin: 5px;
     border-radius: 10px;
@@ -197,6 +206,63 @@ td {
 .raid-report:not(:hover) {
     transition: 0.1s;
 }
+
+section {
+    border-radius: 10px;
+    display: inline-block;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px;
+    position: relative;
+    z-index: 20;
+}
+
+.black-r,
+.black-pve,
+.black-pvp,
+.black-wep {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.black-r:before,
+.black-pve:before,
+.black-pvp:before,
+.black-wep:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: #000000ab;
+}
+
+.black-r {
+    background-image: url("../../backgrounds/destiny2-bgs-clan-bulgaria-raid-wallpaper.jpeg");
+}
+
+.black-pve {
+    background-image: url("../../backgrounds/destiny2-bgs-clan-bulgaria-pve-wallpaper.webp");
+}
+
+.black-pvp {
+    background-image: url("../../backgrounds/destiny2-bgs-clan-bulgaria-pvp-background.jpg");
+}
+
+.black-wep {
+    background-image: url("../../backgrounds/destiny2-bgs-clan-bulgaria-pvp-weapons-background.jpeg");
+}
+
 
 @media screen and (max-width:678px) {
     .profile-container {
@@ -286,7 +352,7 @@ td {
 
     table {
         display: flex;
-        background-color: #53533f;
+        background-color: transparent;
         border-radius: 10px;
         margin-bottom: 15px;
         width: 100%;
