@@ -12,6 +12,7 @@
     flex-direction: column;
     background: #000000bd;
     position: relative;
+    backdrop-filter: blur(5px);
 }
 
 .main-info {
@@ -270,6 +271,7 @@ td {
         align-items: center;
         align-content: center;
         flex-wrap: wrap;
+        backdrop-filter: blur(5px);
     }
 
     .profile-name {
