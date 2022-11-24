@@ -140,7 +140,9 @@
     bottom: 6.8%;
     right: 10%;
     z-index: 10;
+    transition: all ease-in-out 300ms;
 }
+
 
 .showMembers:hover {
     cursor: pointer;
@@ -421,10 +423,58 @@ form.search {
         border: 2px solid #ffffff75;
         border-radius: 10px;
         margin: unset;
+        padding: 1rem;
         place-content: center;
         width: inherit;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .welcome-h1 {
+        font-size: 1rem;
+        color: white;
+        margin: auto;
+        background: rgba(0, 0, 0, 0.808);
+        padding: 10px;
+        width: -moz-fit-content;
+        width: fit-content;
+        max-width: 600px;
+        border: 1px solid #b15403a1;
+        border-radius: 10px;
+        text-shadow: -1px 2px 1px coral;
+    }
+
+    .showMembers {
+        font-size: 1rem;
+        background: #545454;
+        border: solid #7a7a5f;
+        padding: 8px;
+        border-radius: 10px;
+        position: fixed;
+        bottom: 3rem;
+        left: 2rem;
+        width: 10rem;
+        z-index: 10;
+        transition: all ease-in-out 200ms;
+    }
+
+    .showMembers:active {
+        color: white;
+    }
+
+    .clan-info-article {
+        background-color: rgba(0, 0, 0, .555);
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1.2;
+        padding: 1rem;
+        text-align: center;
+        text-shadow: -1px 1px 0 #000;
+        width: 100%;
+        border-radius: 10px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
     }
 
     .home-container::before {
@@ -444,8 +494,10 @@ form.search {
         flex-wrap: wrap;
         flex-direction: column;
         margin: 10px;
+        width: -moz-fit-content;
         width: fit-content;
         align-items: center;
+        width: 100%;
     }
 
     .data-container p {
@@ -476,8 +528,8 @@ form.search {
 
     .buttons-container {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .player-name {

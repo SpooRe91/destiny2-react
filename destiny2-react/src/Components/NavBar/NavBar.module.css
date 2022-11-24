@@ -161,7 +161,7 @@
         line-height: 1;
         position: fixed;
         gap: 3px;
-        top: 2%;
+        top: 0.5rem;
         left: 50%;
         transform: translate(-50%, 0%);
         width: 100%;

@@ -1,6 +1,6 @@
 .toggle-background-left {
     font-size: 1em;
-    background: #545454e0;
+    background: transparent;
     border: solid #7a7a5f;
     padding: 8px;
     color: whitesmoke;
@@ -8,12 +8,12 @@
     position: relative;
     right: 0%;
     transform: translate(0px, 0px);
-    transition: 300ms;
+    transition: all ease-in-out 300ms;
 }
 
 .toggle-background-right {
     font-size: 1em;
-    background: #545454e0;
+    background: transparent;
     border: solid #7a7a5f;
     padding: 8px;
     color: rgb(0, 0, 139);
@@ -21,7 +21,13 @@
     position: relative;
     right: 0%;
     transform: translate(100px, 0px);
-    transition: 300ms;
+    transition: all ease-in-out 300ms;
+}
+
+.toggle-background-left:active,
+.toggle-background-right:active {
+    background-color: white;
+    color: white;
 }
 
 .slider-container-dark {
@@ -74,7 +80,7 @@
         position: relative;
         right: 0%;
         transform: translate(0px, 0px);
-        transition: 300ms;
+        transition: all ease-in-out 300ms;
     }
 
     .toggle-background-right {
@@ -87,7 +93,7 @@
         position: relative;
         right: 0%;
         transform: translate(100px, 0px);
-        transition: 300ms;
+        transition: all ease-in-out 300ms;
     }
 
     .slider-container-dark {
