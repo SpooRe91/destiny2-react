@@ -24,6 +24,19 @@
     margin: 80px auto;
     border-radius: 10px;
     border: 1px solid coral;
+    position: relative;
+    z-index: 10;
+}
+
+.home-container::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
     backdrop-filter: blur(5px);
 }
 
@@ -210,15 +223,17 @@
 }
 
 .clan-info-article {
+    background-color: rgba(0, 0, 0, .555);
+    color: #fff;
     font-size: 1.06em;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.555);
-    width: 100%;
-    padding: 15px;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    padding: 1rem;
     text-align: center;
-    text-shadow: -1px 1px 0px rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    margin: 0;
+    text-shadow: -1px 1px 0 #000;
+    width: 90%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
 }
 
 .clan-member-sign {
@@ -410,6 +425,18 @@ form.search {
         width: inherit;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+
+    .home-container::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        z-index: -1;
+        backdrop-filter: blur(5px);
     }
 
     .data-container {
