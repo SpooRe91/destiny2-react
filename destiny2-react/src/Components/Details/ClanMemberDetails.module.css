@@ -185,32 +185,31 @@ td {
 }
 
 .raid-report {
-    text-shadow: -1px 2px 1px black;
-    font-size: 1em;
-    background: #545454;
+    background: #5454548f;
     border: 1px solid #7a7a5f;
-    padding: 8px;
-    margin: 5px;
     border-radius: 10px;
+    font-size: 1em;
     font-weight: 650;
-    text-decoration: none;
     letter-spacing: 1px;
+    margin: 5px;
+    padding: 8px;
+    text-decoration: none;
+    text-shadow: -1px 2px 1px #000;
+    transition: all ease-in-out 300ms;
 }
 
 .raid-report:hover {
+    box-shadow: 0 0 20px #fff;
     cursor: pointer;
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 20px white;
-    transition: 0.1s;
+    transition: .1s;
+    background: #00000052;
+    text-shadow: -1px 2px 1px black;
 }
 
 .raid-report:active {
     color: white;
 }
 
-.raid-report:not(:hover) {
-    transition: 0.1s;
-}
 
 .black-r,
 .black-pve,
