@@ -173,7 +173,7 @@ export const ClanMemberDetails = () => {
                                                 </table>
                                             </section>
                                             <section className={styles["pve-section"]}>
-                                            <div className={styles["black-pve"]}></div>
+                                                <div className={styles["black-pve"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -226,7 +226,7 @@ export const ClanMemberDetails = () => {
                                                 </table>
                                             </section>
                                             <section className={styles["pvp-section"]}>
-                                            <div className={styles["black-pvp"]}></div>
+                                                <div className={styles["black-pvp"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -271,7 +271,7 @@ export const ClanMemberDetails = () => {
                                                 </table>
                                             </section>
                                             <section className={styles["weapons-section"]}>
-                                            <div className={styles["black-wep"]}></div>
+                                                <div className={styles["black-wep"]}></div>
                                                 <table>
                                                     <thead>
                                                         <tr>
@@ -357,7 +357,7 @@ export const ClanMemberDetails = () => {
                                                             <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsGrenade.basic.value}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td className={styles["name-td"]}>otal <b style={{ "color": "coral" }}>melee </b>kills:</td>
+                                                            <td className={styles["name-td"]}>Total <b style={{ "color": "coral" }}>melee </b>kills:</td>
                                                             <td className={styles["stats-td"]}>{characterStats?.allPvP.allTime.weaponKillsMelee.basic.value}</td>
                                                         </tr>
                                                     </tbody>
