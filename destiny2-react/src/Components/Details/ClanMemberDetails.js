@@ -23,7 +23,7 @@ export const ClanMemberDetails = () => {
                         data.Response.results.find(el => el?.bungieNetUserInfo.membershipId === id));
                     setIsLoading(state => false)
                 } else {
-                    throw new Error('Unable to retreive the stats for the current user!')
+                    throw new Error('Unable to fetch the stats for the current user!')
                 }
             })
             .catch(error => {
