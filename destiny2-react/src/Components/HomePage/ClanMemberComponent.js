@@ -17,22 +17,25 @@ export const ClanMemberComponent = ({ data }) => {
                     </Link>
                     <p>
                         Name: <Link to={`bgs/details/${id}`} className={styles["player-name"]}>
-                            {data.memberType === 5 &&
+                            {data.memberType === 5 ?
                                 <strong style={{ "color": '#ff0000a1' }}>
                                     {data?.bungieNetUserInfo.displayName}
                                 </strong>
+                                : null
                             }
                             {
-                                data.memberType === 3 &&
-                                <strong style={{ "color": '#ff4400fa' }}>
-                                    {data?.bungieNetUserInfo.displayName}
-                                </strong>
+                                data.memberType === 3 ?
+                                    <strong style={{ "color": '#ff4400fa' }}>
+                                        {data?.bungieNetUserInfo.displayName}
+                                    </strong>
+                                    : null
                             }
                             {
-                                data.memberType < 3 &&
-                                <strong style={{ "color": '#1bce09' }}>
-                                    {data?.bungieNetUserInfo.displayName}
-                                </strong>
+                                data.memberType < 3 ?
+                                    <strong style={{ "color": '#1bce09' }}>
+                                        {data?.bungieNetUserInfo.displayName}
+                                    </strong>
+                                    : null
                             }
                         </Link>
                     </p>
