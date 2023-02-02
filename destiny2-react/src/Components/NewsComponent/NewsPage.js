@@ -16,7 +16,10 @@ export const NewsPage = () => {
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
     useEffect(() => {
+        const controller = new AbortController();
+        const { signal } = controller;
         fetch('https://www.bungie.net/Platform/Trending/Categories/', {
+            signal: signal,
             headers: {
                 'content-type': 'application/json',
                 "X-API-Key": API_KEY
@@ -26,15 +29,18 @@ export const NewsPage = () => {
             .then(data => {
                 if (data.Response?.categories[1].entries.results.length <= 0) {
                     setIsLoading(state => true);
+                    if (controller.signal.aborted) { return }
                     throw new Error('Unable to fetch news, please try again later!');
                 }
                 setNews(data.Response?.categories[1].entries.results);
                 setIsLoading(state => false);
 
             }).catch(error => {
-                alert(error);
+                console.log(error)
             });
-
+        return (() => {
+            controller.abort();
+        });
     }, [news.length, API_KEY]);
 
     return (

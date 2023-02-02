@@ -19,36 +19,46 @@ export const HomePage = () => {
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
     useEffect(() => {
+        const controller = new AbortController();
+        const { signal } = controller;
 
-        getClanInfo()
+        getClanInfo(signal, controller)
             .then(clanInfo => {
                 if (clanInfo?.ErrorCode !== 2101
-                    && clanInfo?.Response?.detail !== null
-                    && clanInfo.Response?.detail !== undefined) {
-                    setClanData(clanInfo.Response?.detail);
+                    && clanInfo?.Response.detail !== null
+                    && clanInfo?.Response.detail !== undefined
+                    && !signal.aborted) {
+                    setClanData(clanInfo?.Response.detail);
                     setIsLoading(state => false)
                 } else {
+                    if (controller.signal.aborted) { return }
                     throw new Error("Unable to fetch clan info, please try again later!");
                 }
             })
             .catch(error => {
-                alert(error)
+                console.log(error);
             })
         // ---------------------------------------------------------------------------------------------------
-        getClanMembers()
+        getClanMembers(signal, controller)
             .then(membersData => {
                 if (membersData?.ErrorCode !== 2101
-                    && membersData.Response !== null
-                    && membersData.Response !== undefined) {
-                    setClanMembers(sate => membersData.Response.results);
+                    && membersData?.Response !== null
+                    && membersData?.Response !== undefined
+                    && !signal.aborted) {
+                    setClanMembers(sate => membersData?.Response.results);
                     setIsLoading(state => false)
                 } else {
+                    if (controller.signal.aborted) { return }
                     throw new Error('Unble to fetch clan members, please try again later!')
                 }
             })
             .catch(error => {
-                alert(error)
+                console.log(error);
             })
+
+        return (() => {
+            controller.abort();
+        })
     }, [API_KEY]);
 
 
@@ -61,8 +71,6 @@ export const HomePage = () => {
     const sortedAdmins = clanMembers?.filter(a => a.memberType >= 3);
     const sortedMembers = clanMembers?.filter(a => a.memberType < 3)
         .sort((a, b) => a.bungieNetUserInfo.displayName.localeCompare(b.bungieNetUserInfo.displayName));
-    // console.log(sortedAdmins);
-    // User.UserInfoCard
 
     return (
         <>

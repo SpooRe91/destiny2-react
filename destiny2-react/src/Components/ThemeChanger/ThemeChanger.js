@@ -29,6 +29,9 @@ export const ThemeSwitcher = () => {
         }
 
         document.querySelector('html').style.backgroundImage = (localStorage.getItem('theme'));
+        return (() => {
+
+        });
     }, [currTheme])
 
     return (

@@ -14,35 +14,52 @@ export const ClanMemberDetails = () => {
     const [characterStats, setCharacterStats] = useState(null);
     const navigate = useNavigate();
 
+
     useEffect(() => {
-        getClanMembers()
+        const controller = new AbortController();
+        const { signal } = controller;
+
+        getClanMembers(signal, controller)
             .then(data => {
-                if (data.Response !== null
-                    && data.Response !== undefined) {
+                if (data?.Response !== null
+                    && data?.Response !== undefined
+                    && !signal.aborted) {
                     setClanMemberInfo(state =>
-                        data.Response.results.find(el => el?.bungieNetUserInfo.membershipId === id));
+                        data?.Response.results.find(el => el?.bungieNetUserInfo.membershipId === id));
                     setIsLoading(state => false)
                 } else {
+                    if (controller.signal.aborted) { return }
                     throw new Error('Unable to fetch the stats for the current user!')
                 }
             })
             .catch(error => {
-                alert(error)
+                console.log(error)
             });
-    }, [id]);
+        return (() => {
+            controller.abort();
+        })
+    }, []);
 
     useEffect(() => {
-        if (clanMembersInfo) {
+        const controller = new AbortController();
+        const { signal } = controller;
 
-            getCharacter(clanMembersInfo?.destinyUserInfo.membershipType, clanMembersInfo?.destinyUserInfo.membershipId)
+        if (clanMembersInfo && !signal.aborted) {
+            getCharacter(
+                clanMembersInfo?.destinyUserInfo.membershipType,
+                clanMembersInfo?.destinyUserInfo.membershipId,
+                signal, controller)
                 .then(data => {
-                    setCharacterStats(state => data.Response)
+                    setCharacterStats(state => data?.Response)
                     setIsLoading(state => false)
                 })
                 .catch(error => {
-                    alert(error)
+                    console.log(error)
                 });
         }
+        return (() => {
+            controller.abort();
+        })
     }, [clanMembersInfo])
 
     return (
