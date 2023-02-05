@@ -9,10 +9,11 @@ import styles from './ClanMemberDetails.module.css'
 export const ClanMemberDetails = () => {
 
     const { id } = useParams();
+    const navigate = useNavigate();
+
     const [isLoading, setIsLoading] = useState(true);
     const [clanMembersInfo, setClanMemberInfo] = useState(null);
     const [characterStats, setCharacterStats] = useState(null);
-    const navigate = useNavigate();
 
 
     useEffect(() => {
