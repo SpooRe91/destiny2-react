@@ -22,13 +22,14 @@ function App() {
   }, []);
 
   const [videoName, setVideoName] = useState('');
+  const [clanMembers, setClanMembers] = useState(null);
 
   return (
     <div className="App">
       <NavBar />
       <ThemeSwitcher />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage clanMembers={clanMembers} setClanMembers={setClanMembers} />} />
         <Route path='/bgs/news' element={<NewsPage />} />
         <Route path='/bgs/links' element={<UsefulLinks />} />
         <Route path='/bgs/photos' element={<PhotosComponent />} />
