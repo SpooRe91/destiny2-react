@@ -8,12 +8,12 @@ import styles from "./HomePage.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faUsersSlash } from '@fortawesome/free-solid-svg-icons'
 
-export const HomePage = () => {
+export const HomePage = ({ clanMembers, setClanMembers }) => {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [clanData, setClanData] = useState(null);
     const [toShowMembers, setToShowMembers] = useState(false);
-    const [clanMembers, setClanMembers] = useState(null);
+
+    const [clanData, setClanData] = useState(null);
     const [filterValue, setFilterValue] = useState("");
 
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
@@ -37,8 +37,18 @@ export const HomePage = () => {
             })
             .catch(error => {
                 console.log(error);
-            })
+            });
         // ---------------------------------------------------------------------------------------------------
+        return (() => {
+            controller.abort();
+        });
+    }, [API_KEY]);
+
+    const fetchClanMembers = () => {
+
+        const controller = new AbortController();
+        const { signal } = controller;
+
         getClanMembers(signal, controller)
             .then(membersData => {
                 if (membersData?.ErrorCode !== 2101
@@ -46,7 +56,9 @@ export const HomePage = () => {
                     && membersData?.Response !== undefined
                     && !signal.aborted) {
                     setClanMembers(sate => membersData?.Response.results);
-                    setIsLoading(state => false)
+                    setIsLoading(state => false);
+                    controller.abort();
+                    return;
                 } else {
                     if (controller.signal.aborted) { return }
                     throw new Error('Unble to fetch clan members, please try again later!')
@@ -54,13 +66,12 @@ export const HomePage = () => {
             })
             .catch(error => {
                 console.log(error);
+            }).finally(() => {
+                controller.abort();
             })
 
-        return (() => {
-            controller.abort();
-        })
-    }, [API_KEY]);
-
+        return;
+    }
 
     const filterHandler = (e) => {
         setFilterValue(e.target.value.toLowerCase().trim());
@@ -92,12 +103,24 @@ export const HomePage = () => {
                                         Created by: SpooRe
                                     </p>
                                 </h1>
-                                <h2 className={styles["head-2"]}>CLAN INFO</h2>
-                                <h3>{clanData?.name}</h3>
-                                <p>Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}</p>
-                                <p>Our moto: </p>
-                                <h4>{clanData?.motto}</h4>
-                                <h4>Callsign: {clanData?.clanInfo.clanCallsign}</h4>
+                                <h2
+                                    className={styles["head-2"]}>CLAN INFO
+                                </h2>
+                                <h3>
+                                    {clanData?.name}
+                                </h3>
+                                <p>
+                                    Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}
+                                </p>
+                                <p>
+                                    Our moto:
+                                </p>
+                                <h4>
+                                    {clanData?.motto}
+                                </h4>
+                                <h4>
+                                    Callsign: {clanData?.clanInfo.clanCallsign}
+                                </h4>
                                 <div>
                                     <article className={styles["clan-info-article"]}>
                                         {clanData?.about}
@@ -105,11 +128,13 @@ export const HomePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <button className={styles["showMembers"]}
-                                    onClick={() => [setToShowMembers(state => !state),
-                                    //this will tell the screen to scroll down once the state is changed from false to true, with a slight delay
-                                    !toShowMembers ? setTimeout(() => { window.scroll({ top: 800, behavior: 'auto' }) }) : null]}
-
+                                <button
+                                    className={styles["showMembers"]}
+                                    onClick={() => [
+                                        setToShowMembers(state => !state),
+                                        !clanMembers ? fetchClanMembers() : null,
+                                        //this will tell the screen to scroll down once the state is changed from false to true, with a slight delay
+                                        !toShowMembers ? setTimeout(() => { window.scroll({ top: 800, behavior: 'auto' }) }) : null]}
                                     style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
                                 >
                                     {
@@ -126,56 +151,83 @@ export const HomePage = () => {
                                 </button>
                             </div>
 
-                            {toShowMembers &&
-
-                                <>
-                                    <h1 className={styles["clan-member-sign"]}>CLAN MEMBERS</h1>
-                                    <div>
-                                        <h1 className={styles["clan-member-search-sign"]}>&#11167; Search for guardian &#11167;</h1>
-                                        <form className={styles["search"]} method="GET">
-                                            {<input type="text" className={styles["input-field"]} placeholder="Guardian name..." name="search"
-                                                defaultValue={filterValue} onChange={filterHandler} />}
-                                            {
-                                                filterValue
-                                                    ?
-                                                    filtered?.length <= 0
+                            {toShowMembers
+                                ?
+                                !clanMembers
+                                    ?
+                                    null
+                                    :
+                                    <>
+                                        <h1 className={styles["clan-member-sign"]}>
+                                            CLAN MEMBERS
+                                        </h1>
+                                        <div>
+                                            <h1 className={styles["clan-member-search-sign"]}>
+                                                &#11167; Search for guardian &#11167;
+                                            </h1>
+                                            <form className={styles["search"]} method="GET">
+                                                {<input
+                                                    type="text"
+                                                    className={styles["input-field"]}
+                                                    placeholder="Guardian name..."
+                                                    name="search"
+                                                    defaultValue={filterValue}
+                                                    onChange={filterHandler} />}
+                                                {
+                                                    filterValue
                                                         ?
-                                                        <p className={styles["form-search-error"]}>No clan members found!</p>
+                                                        filtered?.length <= 0
+                                                            ?
+                                                            <p className={styles["form-search-error"]}>
+                                                                No clan members found!
+                                                            </p>
+                                                            :
+                                                            <p className={styles["form-search-confirmation"]}>
+                                                                Found {
+                                                                    filtered.length === 1
+                                                                        ? `${filtered.length} clan member`
+                                                                        : `${filtered.length} clan members`}
+                                                            </p>
                                                         :
-                                                        <p className={styles["form-search-confirmation"]}>Found {
-                                                            filtered.length === 1
-                                                                ? `${filtered.length} clan member`
-                                                                : `${filtered.length} clan members`}
-                                                        </p>
-                                                    :
-                                                    ""
-                                            }
-                                        </form>
-                                    </div>
-                                </>
+                                                        null
+                                                }
+                                            </form>
+                                        </div>
+                                    </>
+                                :
+                                null
                             }
                             <div className={styles["clan-member-container"]}>
                                 {toShowMembers
-                                    &&
-                                    <>
-                                        {
-                                            filterValue
-                                                ?
-                                                filtered?.sort((a, b) => b.memberType - a.memberType)
-                                                    .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                :
-                                                <>
-                                                    {
-                                                        sortedAdmins?.sort((a, b) => b.memberType - a.memberType)
-                                                            .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                    }
-                                                    {
-                                                        sortedMembers?.sort((a, b) => b.memberType - a.memberType)
-                                                            .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                    }
-                                                </>
-                                        }
-                                    </>
+                                    ?
+                                    !clanMembers
+                                        ?
+                                        <>
+                                            <h2>Fetching clan members...</h2>
+                                            <ClockLoader color="lightblue" size="50px" />
+                                        </>
+                                        :
+                                        <>
+                                            {
+                                                filterValue
+                                                    ?
+                                                    filtered?.sort((a, b) => b.memberType - a.memberType)
+                                                        .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                    :
+                                                    <>
+                                                        {
+                                                            sortedAdmins?.sort((a, b) => b.memberType - a.memberType)
+                                                                .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                        }
+                                                        {
+                                                            sortedMembers?.sort((a, b) => b.memberType - a.memberType)
+                                                                .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                        }
+                                                    </>
+                                            }
+                                        </>
+                                    :
+                                    null
                                 }
                             </div>
                         </>
