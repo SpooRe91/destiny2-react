@@ -41,7 +41,7 @@ export const NewsPage = () => {
         return (() => {
             controller.abort();
         });
-    }, [news.length, API_KEY]);
+    }, [news.length]);
 
     return (
         <>
