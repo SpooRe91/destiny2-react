@@ -11,7 +11,6 @@ export const NewsPage = () => {
 
     const [news, setNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    // const [toShowNews, setToShowNews] = useState(false);
 
     const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 
@@ -56,10 +55,6 @@ export const NewsPage = () => {
                 <div className={styles["newsContainer"]}>
                     {
                         <>
-                            {/* <button onClick={() => setToShowNews(state => !state)} className={styles["news-button"]}
-                                    style={toShowNews ? { 'color': 'coral' } : { 'color': 'whitesmoke' }}>
-                                    {toShowNews ? 'Show latest news' : 'Show ALL Bungie.net news'}
-                                </button> */}
                             <Carousel className={styles["carousel-short"]} emulateTouch={true}
                                 useKeyboardArrows={true} autoFocus={true} autoPlay={true} infiniteLoop={true} showThumbs={false}>
                                 {
