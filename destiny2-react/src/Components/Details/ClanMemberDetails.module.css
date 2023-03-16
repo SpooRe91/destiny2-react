@@ -256,7 +256,7 @@ td {
 }
 
 
-@media screen and (max-width:678px) {
+@media screen and (max-width:678px) and (max-width:768px) and (max-width:1440px) {
     .profile-container {
         display: flex;
         justify-content: center;
