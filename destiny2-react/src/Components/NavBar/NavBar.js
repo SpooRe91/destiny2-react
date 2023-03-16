@@ -66,7 +66,7 @@ export const NavBar = () => {
                     <NavLink to="/bgs/news"><FontAwesomeIcon icon={faNewspaper} className={styles['nav-icon']} /> News</NavLink>
                 </li>
                 <li>
-                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCircleQuestion} className={styles['nav-icon']} /> About us & Join</a>
+                    <a href='https://www.bungie.net/en/ClanV2?groupid=4131725' target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCircleQuestion} className={styles['nav-icon']} /> Find us on Bungie.net</a>
                 </li>
                 {/* {
                     !refreshToken
