@@ -21,22 +21,24 @@ export const ClanMemberDetails = () => {
         const controller = new AbortController();
         const { signal } = controller;
 
-        getClanMembers(signal, controller)
-            .then(data => {
-                if (data?.Response !== null
-                    && data?.Response !== undefined
-                    && !signal.aborted) {
-                    setClanMemberInfo(state =>
-                        data?.Response.results.find(el => el?.bungieNetUserInfo.membershipId === id));
-                    setIsLoading(state => false)
-                } else {
-                    if (controller.signal.aborted) { return }
-                    throw new Error('Unable to fetch the stats for the current user!')
-                }
-            })
-            .catch(error => {
-                console.log(error)
-            });
+        if (!clanMembersInfo) {
+            getClanMembers(signal, controller)
+                .then(data => {
+                    if (data?.Response !== null
+                        && data?.Response !== undefined
+                        && !signal.aborted) {
+                        setClanMemberInfo(state =>
+                            data?.Response.results.find(el => el?.bungieNetUserInfo.membershipId === id));
+                        setIsLoading(state => false)
+                    } else {
+                        if (controller.signal.aborted) { return }
+                        throw new Error('Unable to fetch the stats for the current user!')
+                    }
+                })
+                .catch(error => {
+                    console.log(error)
+                });
+        }
         return (() => {
             controller.abort();
         })
