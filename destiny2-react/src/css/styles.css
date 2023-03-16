@@ -126,7 +126,7 @@ img {
     width: 300px;
 }
 
-@media screen and (max-width:678px) {
+@media screen and (max-width:678px) and (max-width:768px) and (max-width:1440px) {
     html {
         box-sizing: border-box;
         -webkit-background-size: cover;

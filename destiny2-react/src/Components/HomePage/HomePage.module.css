@@ -388,7 +388,7 @@ form.search {
     text-shadow: -1px 2px 1px black;
 }
 
-@media screen and (max-width:678px) {
+@media screen and (max-width:678px) and (max-width:768px) and (max-width:1440px) {
 
     .clan-member-container {
         display: flex;

@@ -29,7 +29,7 @@ code {
   }
 }
 
-@media screen and (max-width:678px) {
+@media screen and (max-width:678px) and (max-width:768px) and (max-width:1440px) {
   body {
     background-image: unset;
     background: unset;
