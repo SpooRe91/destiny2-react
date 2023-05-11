@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import styles from './ThemeChanger.module.css';
-import darkTheme from "../../backgrounds/destiny2oldbulgarianstyleBGsdark.png"
-import lightTheme from "../../backgrounds/destiny2oldbulgarianstyleBGslight.jpg"
+import darkTheme from "../../backgrounds1/destiny2oldbulgarianstyleBGsdark.webp"
+import lightTheme from "../../backgrounds1/destiny2oldbulgarianstyleBGslight.webp"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'

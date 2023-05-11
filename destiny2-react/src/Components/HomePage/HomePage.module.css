@@ -204,11 +204,11 @@
 }
 
 .clan-info {
-    background-image: url('../../backgrounds/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style.png');
+    background-image: url('../../backgrounds1/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style.webp');
     font-size: 1.1em;
     margin: 10px auto;
-    /* background: rgba(0, 0, 0, 0.808); */
-    /* padding: 10px; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: -webkit-center;
     width: -moz-fit-content;
     width: 100%;
