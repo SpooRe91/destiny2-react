@@ -44,12 +44,12 @@ export const ThemeSwitcher = () => {
                     {
                         currTheme === "light" ?
                             <>
-                                {"To the dark"} <FontAwesomeIcon icon={faMoon} />
+                                {"To the dark"} <FontAwesomeIcon className={currTheme === "light" ? styles["moon"] : ""} icon={faMoon} />
                             </>
 
                             :
                             <>
-                                {"To the light"} <FontAwesomeIcon icon={faSun} />
+                                {"To the light"} <FontAwesomeIcon className={currTheme === 'dark' ? styles['sun'] : ""} icon={faSun} />
                             </>
                     }
                 </button>

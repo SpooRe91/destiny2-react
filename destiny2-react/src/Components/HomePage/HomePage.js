@@ -97,58 +97,68 @@ export const HomePage = ({ clanMembers, setClanMembers }) => {
                         &&
                         <>
                             <div className={styles["clan-info"]}>
-                                <h1 className={styles["welcome-h1"]}>
-                                    Welcome to the BGs Destiny 2 clan, website!
+                                <article className={styles["clan-info-article"]}>
+                                    <h1 className={styles["welcome-h1"]}>
+                                        Welcome to the BGs Destiny 2 clan, website!
+                                        <p>
+                                            Created by: SpooRe
+                                        </p>
+                                    </h1>
+                                    <h2
+                                        className={styles["head-2"]}>CLAN INFO
+                                    </h2>
+
+                                    <h3>
+                                        {clanData?.name}
+                                    </h3>
                                     <p>
-                                        Created by: SpooRe
+                                        Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}
                                     </p>
-                                </h1>
-                                <h2
-                                    className={styles["head-2"]}>CLAN INFO
-                                </h2>
-                                <h3>
-                                    {clanData?.name}
-                                </h3>
-                                <p>
-                                    Since: {`${creation?.getDate()}/${creation?.getMonth() + 1}/${creation?.getFullYear()}`}
-                                </p>
-                                <p>
-                                    Our moto:
-                                </p>
-                                <h4>
-                                    {clanData?.motto}
-                                </h4>
-                                <h4>
-                                    Callsign: {clanData?.clanInfo.clanCallsign}
-                                </h4>
-                                <div>
-                                    <article className={styles["clan-info-article"]}>
+
+
+                                    <p>
+                                        Our moto:
+                                    </p>
+                                    <h4>
+                                        {clanData?.motto}
+                                    </h4>
+
+
+                                    <h4>
+                                        Callsign: {clanData?.clanInfo.clanCallsign}
+                                    </h4>
+
+                                    <div>
                                         {clanData?.about}
-                                    </article>
-                                </div>
+                                    </div>
+                                </article>
+
                             </div>
                             <div>
-                                <button
-                                    className={styles["showMembers"]}
-                                    onClick={() => [
-                                        setToShowMembers(state => !state),
-                                        !clanMembers ? fetchClanMembers() : null,
-                                        //this will tell the screen to scroll down once the state is changed from false to true, with a slight delay
-                                        !toShowMembers ? setTimeout(() => { window.scroll({ top: 800, behavior: 'auto' }) }) : null]}
-                                    style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
-                                >
-                                    {
-                                        !toShowMembers ?
-                                            <>
-                                                {"Show members"} < FontAwesomeIcon icon={faUsers} />
-                                            </>
-                                            :
-                                            <>
-                                                {"Hide members"} < FontAwesomeIcon icon={faUsersSlash} />
-                                            </>
+                                <a href="#clan-members">
+                                    <button
+                                        className={styles["showMembers"]}
+                                        onClick={() => [
+                                            setToShowMembers(state => !state),
+                                            !clanMembers ? fetchClanMembers() : null,
+                                            //this will tell the screen to scroll down once the state is changed from false to true, with a slight delay
+                                            !toShowMembers ? setTimeout(() => { window.scroll({ top: 800, behavior: 'auto' }) }) : null]}
+                                        style={toShowMembers ? { 'color': 'coral' } : { 'color': 'lightblue' }}
+                                    >
 
-                                    }
-                                </button>
+                                        {
+                                            !toShowMembers ?
+                                                <>
+                                                    {"Show members"} < FontAwesomeIcon icon={faUsers} />
+                                                </>
+                                                :
+                                                <>
+                                                    {"Hide members"} < FontAwesomeIcon icon={faUsersSlash} />
+                                                </>
+
+                                        }
+                                    </button>
+                                </a>
                             </div>
 
                             {toShowMembers
@@ -197,43 +207,48 @@ export const HomePage = ({ clanMembers, setClanMembers }) => {
                                 :
                                 null
                             }
-                            <div className={styles["clan-member-container"]}>
-                                {toShowMembers
+                            {
+                                toShowMembers
                                     ?
-                                    !clanMembers
-                                        ?
-                                        <>
-                                            <h2>Fetching clan members...</h2>
-                                            <ClockLoader color="lightblue" size="50px" />
-                                        </>
-                                        :
-                                        <>
-                                            {
-                                                filterValue
-                                                    ?
-                                                    filtered?.sort((a, b) => b.memberType - a.memberType)
-                                                        .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                    :
-                                                    <>
-                                                        {
-                                                            sortedAdmins?.sort((a, b) => b.memberType - a.memberType)
+                                    <div id="clan-members" div className={styles["clan-member-container"]}>
+                                        {toShowMembers
+                                            ?
+                                            !clanMembers
+                                                ?
+                                                <div className={styles["loading-message"]}>
+                                                    <h2>Fetching clan members...</h2>
+                                                    <ClockLoader color="lightblue" size="50px" />
+                                                </div>
+                                                :
+                                                <>
+                                                    {
+                                                        filterValue
+                                                            ?
+                                                            filtered?.sort((a, b) => b.memberType - a.memberType)
                                                                 .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                        }
-                                                        {
-                                                            sortedMembers?.sort((a, b) => b.memberType - a.memberType)
-                                                                .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
-                                                        }
-                                                    </>
-                                            }
-                                        </>
-                                    :
-                                    null
-                                }
-                            </div>
+                                                            :
+                                                            <>
+                                                                {
+                                                                    sortedAdmins?.sort((a, b) => b.memberType - a.memberType)
+                                                                        .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                                }
+                                                                {
+                                                                    sortedMembers?.sort((a, b) => b.memberType - a.memberType)
+                                                                        .map(el => <ClanMemberComponent key={el.destinyUserInfo.membershipId} data={el} />)
+                                                                }
+                                                            </>
+                                                    }
+                                                </>
+                                            :
+                                            null
+                                        }
+                                    </div>
+                                    : null
+                            }
                         </>
                     }
                     <ScrollButton />
-                </div>
+                </div >
             }
         </>
     )
