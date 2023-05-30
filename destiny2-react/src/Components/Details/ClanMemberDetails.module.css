@@ -264,7 +264,7 @@ td {
         border-radius: 10px;
         background: #000000bd;
         position: relative;
-        flex-direction: row;
+        flex-direction: columns;
         align-items: center;
         align-content: center;
         flex-wrap: wrap;

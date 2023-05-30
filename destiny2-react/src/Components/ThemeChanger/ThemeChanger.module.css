@@ -68,6 +68,17 @@
     transition: 0.1s;
 }
 
+.moon {
+    transform: rotate(360deg);
+    transition: all 500ms ease-in-out;
+}
+
+.sun {
+    transform: rotate(180deg);
+    transition: all 500ms ease-in-out;
+}
+
+
 @media screen and (min-width:320px) and (max-width:1501px) {
 
     .toggle-background-left {
@@ -97,7 +108,7 @@
     }
 
     .slider-container-dark {
-        width: 190px;
+        width: 183px;
         position: fixed;
         right: 1rem;
         top: 3.5rem;
@@ -109,7 +120,7 @@
     }
 
     .slider-container-light {
-        width: 190px;
+        width: 183px;
         position: fixed;
         right: 1rem;
         top: 3.5rem;
