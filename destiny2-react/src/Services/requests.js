@@ -1,4 +1,3 @@
-const API_KEY = process.env.REACT_APP_BUNGIE_API_KEY;
 const URL = "https://mb-cook-server.vercel.app/d2";
 
 export const getClanInfo = (signal, controller) => {
@@ -6,7 +5,6 @@ export const getClanInfo = (signal, controller) => {
     signal: signal,
     headers: {
       "content-type": "application/json",
-      "X-API-Key": API_KEY,
     },
   })
     .then((res) => res.json())
@@ -24,7 +22,6 @@ export const getClanMembers = (signal, controller) => {
     signal: signal,
     headers: {
       "content-type": "application/json",
-      "X-API-Key": API_KEY,
     },
   })
     .then((res) => res.json())
@@ -42,7 +39,6 @@ export const getUser = (id, signal, controller) => {
     signal: signal,
     headers: {
       "content-type": "application/json",
-      "X-API-Key": API_KEY,
     },
   })
     .then((res) => res.json())
@@ -65,7 +61,6 @@ export const getCharacter = (
     signal: signal,
     headers: {
       "content-type": "application/json",
-      "X-API-Key": API_KEY,
     },
     body: {
       membershipType,
