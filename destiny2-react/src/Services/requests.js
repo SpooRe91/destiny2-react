@@ -62,10 +62,6 @@ export const getCharacter = (
     headers: {
       "content-type": "application/json",
     },
-    body: {
-      membershipType,
-      destinyMembershipId,
-    },
   })
     .then((res) => res.json())
     .catch((error) => {
@@ -73,5 +69,20 @@ export const getCharacter = (
         return;
       }
       console.log(error);
+    });
+};
+export const getNews = (signal, controller) => {
+  return fetch(`${URL}/news`, {
+    signal: signal,
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .catch((error) => {
+      if (controller.signal.aborted) {
+        return;
+      }
+      throw new Error(error.message || "Something went wrong!");
     });
 };
