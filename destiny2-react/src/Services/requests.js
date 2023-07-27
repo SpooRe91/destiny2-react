@@ -1,5 +1,5 @@
 const URL = "https://mb-cook-server.vercel.app/d2";
-
+// ""
 export const getClanInfo = (signal, controller) => {
   return fetch(`${URL}/clanInfo`, {
     signal: signal,
