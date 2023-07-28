@@ -1,9 +1,5 @@
 .clan-member-container {
     position: relative;
-    background-image: url('../../backgrounds1/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style-3guardians.webp');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -69,7 +65,7 @@
     top: 0;
     left: 0;
     z-index: 0;
-    background-color: #000000b6;
+    background-color: #00000047;
 }
 
 .home-container::before {
