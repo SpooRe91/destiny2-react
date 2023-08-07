@@ -439,10 +439,6 @@ form.search {
 @media screen and (min-width:320px) and (max-width:1501px) {
 
     .clan-member-container {
-        background-image: url('../../backgrounds1/destiny-2-bgs-clan-bulgarian-clan-bgs-old-bulgarian-style-3guardians.webp');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
         display: flex;
         align-content: center;
         align-items: center;
