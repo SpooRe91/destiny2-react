@@ -15,7 +15,7 @@
     "json5": "^2.2.3",
     "loader-utils": "^3.2.1",
     "minimatch": "^6.1.6",
-    "protobufjs": "^7.2.4",
+    "protobufjs": "^7.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
