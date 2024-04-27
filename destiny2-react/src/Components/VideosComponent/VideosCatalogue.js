@@ -7,12 +7,6 @@ export const VideosCatalogue = ({ setVideoName }) => {
     return (
         <div className={styles["all-buttons-container"]}>
             <title>Videos</title>
-            <button onClick={() => setVideoName("SpooRe's playlist")} className={styles["video-button-button"]}>
-                <Link to='/bgs/videos/v=OiiNBQ7hev8&list=PLh8Yxx5KxoxmkdHBUOnpSmG5-IISGM_OB&ab_channel=M.B.'
-                    className={styles["video-button"]}>
-                    Funny stuff
-                </Link>
-            </button>
             <button onClick={() => setVideoName("Raid guides")} className={styles["video-button-button"]}>
                 <Link to='/bgs/videos/v=D9s_X176gRs&list=PLh8Yxx5KxoxmZT9FZY1oTzUS6sJjd57Pz&index=1&ab_channel=M.B.'
                     className={styles["video-button"]}>
