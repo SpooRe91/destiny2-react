@@ -8,23 +8,25 @@ export const UsefulLinks = () => {
     const [toShowLinks, setToShowLinks] = useState(false);
 
     return (
-        <>
+        <div className={styles["link-container"]}>
             <title>Useful links</title>
-            <div className={styles["link-container"]}>
-
-                <iframe src="https://raid.report/" title="raid-report" loading="lazy">
+            <div className={styles["iframe-container"]}>
+                <iframe className={styles["iframe"]} src="https://raid.report/" title="raid-report" loading="lazy">
                     Raid report
                 </iframe>
-                <iframe src="https://dungeon.report/" title="dungeon-report" loading="lazy">
+                <iframe className={styles["iframe"]} src="https://dungeon.report/" title="dungeon-report" loading="lazy">
                     Dungeon report
                 </iframe>
-                <iframe src="https://trials.report/" title="trials-report" loading="lazy">
+
+                <iframe className={styles["iframe"]} src="https://trials.report/" title="trials-report" loading="lazy">
                     Trials report
                 </iframe>
-                <iframe src="https://bray.tech/" title="braytech" loading="lazy">
+
+                <iframe className={styles["iframe"]} src="https://bray.tech/" title="braytech" loading="lazy">
                     Braytech
                 </iframe>
             </div>
+
             <button className={styles["showLinks"]}
                 onClick={() => [setToShowLinks(state => !state)]}
                 style={toShowLinks ? { 'color': 'coral' } : { 'color': 'lightblue' }}
@@ -77,6 +79,6 @@ export const UsefulLinks = () => {
                 </div>
             }
             <ScrollButton />
-        </>
+        </div>
     )
 }
