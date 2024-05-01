@@ -44,7 +44,7 @@ html {
     html {
         scroll-behavior: smooth;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
         min-width: 320px;
     }
 }

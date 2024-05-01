@@ -1,15 +1,13 @@
 .link-container {
-    align-content: flex-start;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    float: left;
-    gap: 20px;
     justify-content: center;
     margin-left: 3.5em;
-    margin-top: 80px;
+    margin-top: 90px;
     margin-bottom: 30px;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
 }
 
 .showLinks {
@@ -38,13 +36,6 @@
 
 .showLinks:not(:hover) {
     transition: 0.1s;
-}
-
-
-.link-container>iframe {
-    width: 1200px;
-    height: 850px;
-    overflow: auto;
 }
 
 .more-links {
@@ -83,4 +74,48 @@
     color: #ffffff;
     text-shadow: 0px 0px 20px white;
     text-decoration: underline;
+}
+
+.iframe-container {
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+.showLinks {
+    color: lightblue;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.showLinks:hover {
+    color: coral;
+}
+
+.more-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.other-link {
+    margin-bottom: 10px;
+    color: lightblue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.other-link:hover {
+    color: coral;
 }
