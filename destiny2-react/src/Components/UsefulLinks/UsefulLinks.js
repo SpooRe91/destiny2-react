@@ -2,7 +2,9 @@ import { useState } from "react";
 import { ScrollButton } from "../Common/ScrollButton";
 
 import styles from "./UsefulLinks.module.css";
-
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 export const UsefulLinks = () => {
 
     const [toShowLinks, setToShowLinks] = useState(false);
@@ -10,6 +12,9 @@ export const UsefulLinks = () => {
     return (
         <div className={styles["link-container"]}>
             <title>Useful links</title>
+            <div className={styles["button-holder"]}>
+                <NavLink to={'/bgs/videos'} className={styles["back-button"]}><FontAwesomeIcon icon={faArrowLeft} /> Back</NavLink>
+            </div>
             <div className={styles["iframe-container"]}>
                 <iframe className={styles["iframe"]} src="https://raid.report/" title="raid-report" loading="lazy">
                     Raid report
