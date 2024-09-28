@@ -81,6 +81,7 @@ export const HomePage = ({ clanMembers, setClanMembers }) => {
   };
 
   const filterHandler = (e) => {
+    e.preventDefault();
     setFilterValue(e.target.value.toLowerCase().trim());
   };
 
