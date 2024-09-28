@@ -176,7 +176,8 @@ export const HomePage = ({ clanMembers, setClanMembers }) => {
                         <h1 className={styles["clan-member-search-sign"]}>
                           &#11167; Search for guardian &#11167;
                         </h1>
-                        <form className={styles["search"]} method="GET">
+                        <form className={styles["search"]}
+                        onSubmit={(e) => e.preventDefault()}>
                           {
                             <input
                               type="text"
